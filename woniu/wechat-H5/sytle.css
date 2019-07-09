@@ -1,0 +1,125 @@
+html, body {
+    width: 100%;
+}
+.main {
+    widows: 100%;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: #ECECEC;
+    padding: 10px 6px;
+    box-sizing: border-box;
+    z-index: 1;
+    /* margin: 0 auto; */
+}
+
+.header p {
+    font-weight: 700;
+}
+
+.search {
+    width: 100%;
+}
+
+.search input {
+    margin-top: 18px;
+    width: 100%; 
+    padding: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none; /* 去除高亮 */
+    border-radius: 3px; /* 圆角 */
+    border: none; /* 去除阴影 */
+}
+
+.item-name {
+    font-size: 8px;
+    color: #555;
+}
+
+.content {
+    width: 100%;
+    padding-bottom: 57px;
+    padding-top: 81px;
+}
+
+.content-items {
+    width: 100%;
+}
+
+.content-item {
+    display: flex;
+    padding: 14px 18px 0 18px;
+    align-items: top;
+    overflow: hidden;
+}
+
+.left-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden; /* 超出部分隐藏 */
+}
+
+.left-pic img {
+    width: 100%;
+}
+
+.message {
+    flex: 1;
+    margin-left: 10px;
+    padding: 5px 5px 20px 0; /* 上 右 下 左 */
+    position: relative;
+}
+
+.message::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    background: #DCDCDC;
+    bottom: 0;
+    left: 0;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    font-weight: 550;
+}
+
+.detail, .time {
+    font-size: 14px;
+    color: #A8A8A8;
+    margin-top: 10px;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    /* height: 48px; */
+    bottom: 0;
+    background-color: #F5F5F5;
+    padding: 8px 0;
+    border: 1px;
+    border-top: 1px solid #EAEAE8; /* 边框 */
+}
+
+.ft-items {
+    width: 100%;
+    display: flex;
+}
+
+.item {
+    flex: 1;
+    text-align: center;
+}
+
+.item img {
+    width: 24px;
+    display: block;
+    margin: 0 auto;
+}
