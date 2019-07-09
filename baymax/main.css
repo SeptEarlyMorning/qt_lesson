@@ -1,0 +1,91 @@
+/* css reset 变成白纸 */
+/* 不推荐 性能不好
+ * {
+    margin: 0;
+    padding: 0;
+} */            
+/* 三头六臂 */
+body {
+    height: 100vh;
+    /* font-size: 30px; */
+    background: radial-gradient(circle at center, #fff, #fff 50%, #aaa 100%) /* 环形渐变 */
+}
+
+.baymax {
+    width: 50%;
+    /* height: 50vh; */
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    border-bottom: 1.5em solid #000;
+}
+
+.baymax:before {
+    content: '';
+    width: 12em;
+    height: 12em;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -6em;
+    left: -9em;
+    /* display: block; */
+    background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
+    background-size: 200% 200%;
+    background-position: 0 100%;
+    /* animation: blink 6s .1s infinite; */
+    animation-delay: 0.1s;
+    animation-name: blink;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        background-position: 0 100%;
+    }
+    85%, 95% {
+        background-position: 0 75%;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+.baymax:after {
+    content: '';
+    width: 12em;
+    height: 12em;
+    background-color: red;
+    border-radius: 50%; /* 圆角 */
+    position: absolute;
+    top: -6em;
+    right: -9em;
+    /* display: block; */
+    background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
+    background-size: 200% 200%;
+    background-position: 0 100%;
+    animation: blink 6s infinite;
+}
+
+/* 让大白从PC来到移动端 */
+/* 适配 响应式编程 手机 */
+@media only screen  and (max-width: 480px) {
+    body {
+        /* background: green; */
+    }
+    .baymax:before, .baymax:after {
+        width: 8em;
+        height: 8em;
+        top: -4em;
+    }
+    .baymax:before {
+        left: -5em;
+
+    }
+    .baymax::after {
+        right: -5em;
+    }
+}
