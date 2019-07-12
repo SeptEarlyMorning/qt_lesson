@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            background-color: aqua;
+            width: 100%;
+            height: 100%;
+            font-size: 10px;
+        }
+
+        body {
+            margin: 0;
+            font-size: 2rem;
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .clock {
+            width: 30rem;
+            height: 30rem;
+            border: 20px solid #fff;
+            border-radius: 50%;
+            margin: auto auto;
+            position: relative;
+            padding: 2rem;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px);
+        }
+
+        .hand {
+            width: 50%;
+            height: 4px;
+            background-color: #000;
+            position: absolute;
+            /* float: right; */
+            top: 50%;
+
+            transform-origin: 100%;
+            /* transform: rotate(90deg); */
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+
+        .second-hand {
+            background-color: red;
+        }
+
+        .hour-hand {
+            width: 30%;
+            height: 8px;
+            left: 20%;
+            /* transform: rotate(90deg); */
+        }
+
+        .min-hand {
+            /* width: 30%; */
+            height: 6px;
+            /* left: 20%; */
+            /* transform: rotate(90deg); */
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+        </div>
+    </div>
+    <script>
+        const hourHand = document.querySelector('.hour-hand');
+        const minHand = document.querySelector('.min-hand');
+        const secondHand = document.querySelector('.second-hand');
+        console.log(hourHand);
+        console.log(minHand);
+
+        function setDate() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const mins = now.getMinutes();
+            const hours = now.getHours();
+            const secondsDegrees = (seconds / 60) * 360 + 90;
+            const minsDegrees = (mins / 60 + seconds / 3600) * 360 + 90;
+            const hoursDegrees = (hours / 12 + mins / (60 * 12) + seconds / (3600 * 12)) * 360 + 90;
+
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+            minHand.style.transform = `rotate(${minsDegrees}deg)`;
+            hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+        }
+        // hourHand.style.transform = `rotate(20)deg`;
+        setInterval(setDate, 1000);
+        setDate();
+    </script>
+</body>
+</html>
