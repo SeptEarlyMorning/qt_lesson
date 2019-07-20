@@ -1,0 +1,27 @@
+.container, .page {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.tab {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.mine-title {
+    text-align: center;
+    font-size: 18px;
+    padding: 12px 0;
+    border: 2px solid #fefefe;
+    font-weight: bolder;
+}
+
+.weui-cells{
+    margin-top: 0;
+}

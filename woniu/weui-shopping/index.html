@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/weui/1.1.3/style/weui.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page tabbar js_show">
+            <div class="page__bd" style="height: 100%;">
+                <div class="weui-tab">
+                    <div class="weui-tab__panel tab show">
+                        1
+                    </div>
+                    <div class="weui-tab__panel tab">
+                        2
+                    </div>
+                    <div class="weui-tab__panel tab">
+                        <div class="mine-title">我的</div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                                    <img src="images/avatar.jpg" style="width: 50px;display: block">
+                                    <!-- <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</span> -->
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <p>联系人名称</p>
+                                    <p style="font-size: 13px;color: #888888;">摘要信息</p>
+                                </div>
+                            </div>
+                            <div class="weui-cells">
+                                <div class="weui-cell weui-cell_example">
+                                    <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:16px;display:block"></div>
+                                    <div class="weui-cell__bd">
+                                        <p>标题文字</p>
+                                    </div>
+                                    <div class="weui-cell__ft">说明文字</div>
+                                </div>
+                                <div class="weui-cell weui-cell_example">
+                                    <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:16px;display:block"></div>
+                                    <div class="weui-cell__bd">
+                                        <p>标题文字</p>
+                                    </div>
+                                    <div class="weui-cell__ft">说明文字</div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="weui-tabbar">
+                        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+                            <span style="display: inline-block;position: relative;">
+                                <img src="./images/dangao.png" alt="" class="weui-tabbar__icon">
+                                <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+                            </span>
+                            <p class="weui-tabbar__label">微信</p>
+                        </a>
+                        <a href="javascript:;" class="weui-tabbar__item">
+                            <img src="./images/shengnvguo.png" alt="" class="weui-tabbar__icon">
+                            <p class="weui-tabbar__label">通讯录</p>
+                        </a>
+                        <a href="javascript:;" class="weui-tabbar__item">
+                            <span style="display: inline-block;position: relative;">
+                                <img src="./images/fuchouzhelianmeng-heiguafu.png" alt="" class="weui-tabbar__icon">
+                                <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+                            </span>
+                            <p class="weui-tabbar__label">发现</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const choose = document.querySelectorAll('.weui-tabbar__item'),
+            tabs = document.querySelectorAll('.weui-tab__panel');
+        // console.log(tabbar__item);
+        for (let i = 0; i < choose.length; i++) {
+            choose[i].addEventListener('click', function() {
+                choose[i].classList.add('weui-bar__item_on');
+                tabs[i].classList.add('show');
+                for (let j = 0; j < tabs.length; j++) {
+                    if (j != i) {
+                        choose[j].classList.remove('weui-bar__item_on');
+                        tabs[j].classList.remove('show');
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
