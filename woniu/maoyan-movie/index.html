@@ -86,7 +86,7 @@
                 type: 'get',
                 success: function(res) {
                     console.log(res);
-                    $('.movie-background').attr('style', 'background-image: url('+ res.data.moviePic + ');');
+                    $('.movie-background').css({'background-image':'url('+ res.data.moviePic + ');'});
                     $('#moviePic').attr('src', res.data.moviePic);
                     $('.movie-name span').html(res.data.name);
                     $('.movie-ename span').html(res.data.nameEnglish);
