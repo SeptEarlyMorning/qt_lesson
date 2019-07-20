@@ -2,6 +2,12 @@ html,
 body {
   width: 100%;
 }
+.flex {
+  display: flex;
+}
+.flex1 {
+  flex: 1;
+}
 .nav {
   height: 1.067rem;
   font-size: 18px;
@@ -56,6 +62,7 @@ body {
   position: relative;
   box-sizing: border-box;
   filter: blur(0);
+  overflow: hidden;
 }
 .page .movie-header .movie-background,
 .page .movie-header .movie-filter {
@@ -69,7 +76,6 @@ body {
   z-index: 0;
   filter: blur(0.6rem);
   -webkit-filter: blur(0.6rem);
-  background-image: url("./images/header-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 40%;
@@ -114,6 +120,63 @@ body {
   margin: 0.08rem 0;
 }
 .page .movie-header .movie-container .movie-content .movie-ename {
-  font-size: 17px;
-  margin: 0.08rem 0;
+  font-size: 12px;
+  margin-bottom: 0.3rem;
+}
+.page .movie-header .movie-container .movie-content .movie-score {
+  font-size: 12px;
+  margin-bottom: 0.3rem;
+}
+.page .movie-header .movie-container .movie-content .movie-score .rating .img {
+  width: 0.48rem;
+  height: 0.48rem;
+  margin-right: 2px;
+}
+.page .movie-header .movie-container .movie-content .movie-score .rating .rating-score {
+  font-size: 0.48rem;
+  columns: #ffc600;
+}
+.page .movie-header .movie-container .movie-content .movie-detail {
+  font-size: 12px;
+  margin-bottom: 0.16rem;
+  opacity: 0.7;
+}
+.page .movie-header .movie-container .movie-content .movie-detail div,
+.page .movie-header .movie-container .movie-content .movie-detail p {
+  margin-bottom: 0.14rem;
+}
+.page .movie-header .movie .operating {
+  margin-top: 0.5rem;
+}
+.page .movie-header .movie .operating div {
+  border: 1px solid rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.4);
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+}
+.page .movie-header .movie .operating div img {
+  vertical-align: middle;
+}
+.page .movie-header .movie .operating div span {
+  vertical-align: middle;
+}
+.page .movie-header .movie .operating .movie-watch {
+  margin-right: 0.3rem;
+}
+.page .movie-header .movie .operating .movie-watch img {
+  width: 14px;
+}
+.page .movie-header .movie .operating .movie-mark img {
+  width: 18px;
+}
+#toast {
+  display: none;
+}
+.active {
+  display: block !important;
 }

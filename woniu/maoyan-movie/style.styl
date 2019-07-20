@@ -2,6 +2,13 @@ $hdbg_color = #000
 $font_color_block = #ffffff
 html, body
     width 100%
+
+.flex
+    display flex
+
+.flex1
+    flex 1
+
 .nav
     height 1.067rem
     font-size 18px
@@ -50,6 +57,7 @@ html, body
             position relative
             box-sizing border-box
             filter blur(0)
+            overflow hidden
             &-background,
             &-filter
                 position absolute
@@ -61,7 +69,7 @@ html, body
                 z-index 0
                 filter blur(0.6rem)
                 -webkit-filter blur(0.6rem)
-                background-image url(./images/header-bg.jpg)
+                // background-image url(./images/header-bg.jpg)
                 background-size cover
                 background-repeat no-repeat
                 background-position-y 40%
@@ -98,7 +106,50 @@ html, body
                         font-size 17px
                         margin 0.08rem 0
                     .movie-ename
-                        font-size 17px
-                        margin 0.08rem 0
+                        font-size 12px
+                        margin-bottom 0.3rem
+                    .movie-score
+                        font-size 12px
+                        margin-bottom 0.3rem
+                        .rating
+                            .img
+                                 width 0.48rem
+                                 height 0.48rem
+                                 margin-right 2px
+                            .rating-score
+                                font-size: 0.48rem
+                                columns #ffc600
+                    .movie-detail
+                        font-size 12px
+                        margin-bottom 0.16rem
+                        opacity 0.7
+                        div, p
+                            margin-bottom 0.14rem
+            .operating
+                margin-top 0.5rem
+                div
+                    border 1px solid rgba(255, 255, 255, 0.4)
+                    background-color rgba(255, 255, 255, 0.4)
+                    font-size 14px
+                    color #ffffff
+                    position relative
+                    z-index 2
+                    text-align center
+                    padding 0.25rem 0
+                    border-radius 4px
+                    img
+                        vertical-align middle
+                    span
+                        vertical-align middle
+                .movie-watch
+                    margin-right 0.3rem
+                    img
+                        width 14px
+                .movie-mark
+                    img
+                        width 18px
 
-                        
+#toast
+    display none
+.active
+    display block !important
