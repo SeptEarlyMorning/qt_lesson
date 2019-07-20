@@ -6,4 +6,4 @@
 - JavaScript 语言精粹
 
 ## 开源计划
-- 使用 Markman + html5 + BEM + CSS3 写个喜欢的项目..
+- 使用 Markman + html5 + BEM + CSS3 写个喜欢的项目.
