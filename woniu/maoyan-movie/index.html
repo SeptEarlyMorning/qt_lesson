@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <header class="nav">
         <i class="arrow-left"></i>
@@ -65,7 +67,47 @@
                     </div>
                     <div class="movie-mark flex1">
                         <img src="./images/star2.png" alt="">
-                        <sdpan>评分</sdpan>
+                        <span>评分</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section2 -->
+        <section class="section-seperate section-expender">
+            <div class="text-expander" id="text-expander">
+                <div class="text-expander__content close">
+                    <p></p>
+                </div>
+                <div class="text-expander__button">
+                    <i class="icon-chevron__down"></i>
+                </div>
+            </div>
+        </section>
+        <!-- section3 -->
+        <section class="section-seperate">
+            <p class="action-list section-title">演职人员</p>
+            <ul class="movie-celebrities"></ul>
+        </section>
+        <!-- section4 -->
+        <section class="movie-booking section-seperate section-expender">
+            <p class="section-title">票房</p>
+            <div class="weui-flex">
+                <div class="weui-flex__item">
+                    <div class="placeholder">
+                        <span id="ranking"></span>
+                        <p>昨日票房排行</p>
+                    </div>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="placeholder">
+                        <span id="booingWeek"></span>
+                        <p>首周票房（万）</p>
+                    </div>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="placeholder">
+                        <span id="bookingTotal"></span>
+                        <p>累计票房（万）</p>
                     </div>
                 </div>
             </div>
@@ -80,13 +122,13 @@
         </div>
     </div>
     <script>
-        (function() {
+        (function () {
             $.ajax({
-                url: 'https://www.easy-mock.com/mock/5d2ed7bb7f168b5e40d35f3f/qt_lesson/maoyang-movie', 
+                url: 'https://www.easy-mock.com/mock/5d2ed7bb7f168b5e40d35f3f/qt_lesson/maoyang-movie',
                 type: 'get',
-                success: function(res) {
+                success: function (res) {
                     console.log(res);
-                    $('.movie-background').css({'background-image':'url('+ res.data.moviePic + ');'});
+                    $('.movie-background').css({ 'background': 'url(' + res.data.moviePic + ');' });
                     $('#moviePic').attr('src', res.data.moviePic);
                     $('.movie-name span').html(res.data.name);
                     $('.movie-ename span').html(res.data.nameEnglish);
@@ -96,7 +138,10 @@
                     $('.address').html(res.data.where);
                     $('.time').html(res.data.time);
                     $('.date').html(res.data.date);
-                    star(res.data.star-3);
+                    $('.text-expander__content p').html(res.data.desc);
+                    star(res.data.star);
+                    celebrity(res.data.person);
+                    booking(res.data.booking);
                 }
             });
 
@@ -112,15 +157,39 @@
                     $('#rating').prepend('<img class="img" src="./images/star.png"></img>');
                 }
             }
+
+            // 演员表
+            function celebrity(e) {
+                for (const n of e) {
+                    $('.movie-celebrities').append(
+                        `<li>
+                            <a href="" class="link">
+                                <div class="movie-celebrities__pic">
+                                    <img src="${n.avatal}" alt="">
+                                </div>
+                                <span class="movie-celebrities-nick">${n.name}</span>
+                                <span class="movie-celebrities-roles">${n.sort}</span>
+                            </a>
+                        </li>`
+                    )
+                }
+            }
+
+            // 票房
+            function booking(e) {
+                $('#ranking').html(e.ranking);
+                $('#booingWeek').html(e.bookingWeek);
+                $('#bookingTotal').html(e.bookingTotal);
+            }
         })()
 
-        $('#movie-watch').click(function() {
+        $('#movie-watch').click(function () {
             if ($(this).hasClass('show')) {
                 $(this).removeClass('show');
                 $('#movie-watch img').attr('src', './images/heart.png');
                 $('#toast .weui-toast__content').html('已取消想看');
                 $('#movie-watch span').html('想看')
-            } else{
+            } else {
                 $('#movie-watch span').html('已想看')
                 $('#toast .weui-toast__content').html('已标记想看');
                 $('#movie-watch').addClass('show');
@@ -129,9 +198,19 @@
             $('#toast').addClass('active');
             setTimeout(() => {
                 $('#toast').removeClass('active');
-            },2000)
+            }, 2000)
         })
 
+        $('#text-expander').on('click', function () {
+            if ($('.icon-chevron__down').hasClass('up')) {
+                $('.icon-chevron__down').removeClass('up');
+                $('.text-expander__content').addClass('close')
+            } else {
+                $('.icon-chevron__down').addClass('up');
+                $('.text-expander__content').removeClass('close')
+            }
+        })
     </script>
 </body>
+
 </html>

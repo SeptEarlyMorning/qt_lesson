@@ -1,5 +1,6 @@
 $hdbg_color = #000
 $font_color_block = #ffffff
+$bd_color = #e5e5e5
 html, body
     width 100%
 
@@ -8,6 +9,13 @@ html, body
 
 .flex1
     flex 1
+
+.section-title
+    font-size 17px
+    color #000000
+
+.action-list.section-title
+    padding-left 0.4rem
 
 .nav
     height 1.067rem
@@ -44,8 +52,8 @@ html, body
     -webkit-tap-highlight-color rgba(255, 255, 255, 0)
     font 14px/1.5 Arial, Helvetica, sans-serif
     section
-        background #fff
-        border-bottom 1px solid #e5e5e5
+        background #ffffff
+        border-bottom 1px solid $bd_color
     .movie-header
         padding 0
         background #f8f8f8
@@ -69,7 +77,7 @@ html, body
                 z-index 0
                 filter blur(0.6rem)
                 -webkit-filter blur(0.6rem)
-                // background-image url(./images/header-bg.jpg)
+                background-image url(./images/header-bg.jpg)
                 background-size cover
                 background-repeat no-repeat
                 background-position-y 40%
@@ -148,6 +156,75 @@ html, body
                 .movie-mark
                     img
                         width 18px
+    .section-seperate
+        padding 0.4rem
+        margin-bottom 0.3rem
+        border-top 1px solid $bd_color
+    .section-expender
+        padding-left 0.4rem
+        padding-right 0.4rem
+        .text-expander
+            &__content.close
+                min-height 65px
+                display -webkit-box
+                overflow hidden
+                text-overflow ellipsis
+                word-break break-all
+                -webkit-box-orient vertical
+                -webkit-line-clamp 3 // 设置行数
+            &__button
+                height 0.7rem
+                text-align center
+                .icon-chevron__down
+                    display inline-block
+                    width 10px
+                    height 10px
+                    border 1px solid #aaaaaa
+                    border-width: 0 1px 1px 0
+                    transform rotateZ(45deg)
+                    box-sizing border-box
+                    transition transform 0.5s
+                .icon-chevron__down.up
+                    transform rotateZ(-135deg)
+    .section-seperate
+        .movie-celebrities
+            width 100%
+            padding 0.3rem 0.3rem 0.1rem 0.3rem
+            overflow-x scroll // x 轴滚动
+            white-space nowrap
+            box-sizing border-box
+            li
+                text-align center
+                display inline-block
+                padding 0.04rem
+                .link
+                    color #000000
+                    .movie-celebrities__pic
+                        width 1.7334rem
+                        height 2.4rem
+                        margin 0.05rem
+                        img
+                            width 100%
+                    span
+                        display block
+                        font-size 0.2rem
+                        text-overflow ellipsis
+                        overflow hidden
+                        white-space nowrap
+                    .movie-celebrities-roles
+                        color #999999
+    .movie-booking
+        padding-bottom 0.2rem
+        .weui-flex
+            text-align center
+            .placeholder
+                span
+                    font-size 24px
+                    color #d96a3d
+                p
+                    color #bababa
+                    margin-top 0.1rem
+
 
 #toast
     display none
