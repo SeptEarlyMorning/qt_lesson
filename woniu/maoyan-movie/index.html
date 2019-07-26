@@ -112,6 +112,91 @@
                 </div>
             </div>
         </section>
+        <!-- section5 -->
+        <section class="movie-photo section-seperate">
+            <p class="action-list section-title">视频和剧照</p>
+            <ul class="movie-photo__lists">
+                <!-- <li class="stage-img-container">
+                    <a href="" >
+                        <div class="movie-celebrities__pic">
+                            <img src="./images/header-bg.jpg" alt="">
+                        </div>
+                    </a>
+                </li> -->
+            </ul>
+        </section>
+        <!-- section6 -->
+        <section class="section-seperate section-expender">
+            <p class="section-title pos_r">讨论
+                <span class="join-comment">参与讨论</span>
+            </p>
+            <ul class="movie-comment">
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>全部</span>
+                        <span class="comment-item__num"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>好评</span>
+                        <span class="comment-item__num good"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>差评</span>
+                        <span class="comment-item__num bad"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>点映</span>
+                        <span class="comment-item__num dy"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>购票</span>
+                        <span class="comment-item__num bought"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>认证作者</span>
+                        <span class="comment-item__num author"></span>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-item__sort">
+                        <span>同城</span>
+                        <span class="comment-item__num sameCity"></span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- section7 -->
+        <section class="section-seperate section-expander">
+                <p class="section-til">精选</p>
+                <ul class="chosen-comment" id="chosen-comment">
+                  <li class="chosen-comment__item">
+                    <div class="item-avatal">
+                      <img src="http://img5.duitang.com/uploads/item/201409/23/20140923094045_BNYji.thumb.700_0.png" alt="">
+                    </div>
+                    <div class="item-detail">
+                      <div class="item-detail__hd">
+                        <div>
+                          <span class="nick-name">额问我</span>
+                          <span class="level">
+                            <img src="" alt="">
+                          </span>
+                        </div>
+                        <p class="item-score__desc">给这部电影打了<span>10</span>分</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </section>
         <!-- toast -->
         <div id="toast">
             <div class="weui-mask_transparent"></div>
@@ -139,9 +224,17 @@
                     $('.time').html(res.data.time);
                     $('.date').html(res.data.date);
                     $('.text-expander__content p').html(res.data.desc);
+                    $('.good').html(res.data.commentNum.good);
+                    $('.bad').html(res.data.commentNum.bad);
+                    $('.dy').html(res.data.commentNum.dy);
+                    $('.bought').html(res.data.commentNum.bought);
+                    $('.author').html(res.data.commentNum.author);
+                    $('.sameCity').html(res.data.commentNum.sameCity);
                     star(res.data.star);
                     celebrity(res.data.person);
                     booking(res.data.booking);
+                    videoAndStills(res.data.pictures);
+                    discuss(res.data.commentNum);
                 }
             });
 
@@ -181,6 +274,29 @@
                 $('#booingWeek').html(e.bookingWeek);
                 $('#bookingTotal').html(e.bookingTotal);
             }
+
+            // 视频和剧照
+            function videoAndStills(e) {
+                for (const n of e) {
+                    // console.log(n);
+                    $('.movie-photo__lists').append(
+                        `<li class="stage-img-container">
+                            <a href="" >
+                                <div class="movie-celebrities__pic">
+                                    <img src="${n}}" alt="">
+                                </div>
+                            </a>
+                        </li>`
+                    );
+                }
+            }
+
+            // // 讨论
+            // function discuss(e) {
+            //     for (let i = 0; i < e.length; i++) {
+            //         $('.movie-comment comment-item:nth-child(' + i + ')').html(e.value);
+            //     }
+            // }
         })()
 
         $('#movie-watch').click(function () {

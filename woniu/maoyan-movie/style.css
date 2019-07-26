@@ -264,6 +264,60 @@ body {
   color: #bababa;
   margin-top: 0.1rem;
 }
+.page .movie-photo .movie-photo__lists {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.3rem 0.3rem 0.2rem 0.3rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.page .movie-photo .movie-photo__lists .stage-img-container {
+  margin-right: 0.13333rem;
+  display: inline-block;
+  width: 2.4rem;
+  height: 1.867rem;
+}
+.page .movie-photo .movie-photo__lists .stage-img-container .movie-celebrities__pic {
+  width: 100%;
+  height: 100%;
+}
+.page .movie-photo .movie-photo__lists .stage-img-container .movie-celebrities__pic img {
+  width: 100%;
+  height: 100%;
+}
+.page .movie-photo .movie-photo__lists .stage-img-container:first-child {
+  width: 3.3334rem;
+  height: 1.847rem;
+}
+.page .movie-photo .movie-photo__lists .stage-img-container:last-child {
+  margin-right: 0;
+}
+.page .section-seperate .pos_r {
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+.page .section-seperate .pos_r .join-comment {
+  float: right;
+  background-color: #d2564d;
+  color: #fff;
+  font-size: 0.4rem;
+  display: inline-block;
+  width: 2rem;
+  text-align: center;
+  border-radius: 0.4rem;
+  line-height: 0.8rem;
+}
+.page .section-seperate .movie-comment .comment-item {
+  display: inline-block;
+}
+.page .section-seperate .movie-comment .comment-item .comment-item__sort {
+  height: 0.75rem;
+  line-height: 0.75rem;
+  border: 1px solid #acacca;
+  border-radius: 0.5rem;
+  padding: 0 0.3rem 0 0.3rem;
+  margin-top: 0.2rem;
+}
 #toast {
   display: none;
 }
