@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/logs/logs",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#48A6FD",
+    "navigationBarTitleText": "九月清晨",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye-1.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "菜单",
+        "iconPath": "images/caidan.png",
+        "selectedIconPath": "images/caidan-1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode-1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
