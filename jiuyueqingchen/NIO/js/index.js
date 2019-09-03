@@ -6,13 +6,13 @@ var menuHasChildren = document.querySelectorAll('.menu-has-children'),
 // console.log(menuHasChildren);
 for (let i = 0; i < menuHasChildren.length; i++) {
     menuHasChildren[i].addEventListener('mouseover', function() {
-        menuSecondary[i].style.display = 'block';
-        span[i].classList.remove('span-down');
-        span[i].classList.add('span-up');
+        // menuSecondary[i].style.display = 'block';
+        // span[i].classList.remove('span-down');
+        // span[i].classList.add('span-up');
     });
     menuHasChildren[i].addEventListener('mouseout', function() {
-        menuSecondary[i].style.display = 'none';
-        span[i].classList.remove('span-up');
-        span[i].classList.add('span-down');
+        // menuSecondary[i].style.display = 'none';
+        // span[i].classList.remove('span-up');
+        // span[i].classList.add('span-down');
     });
 }

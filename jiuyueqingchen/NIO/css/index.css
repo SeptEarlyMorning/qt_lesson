@@ -9,6 +9,26 @@ a {
     color: #000;
 }
 
+.button {
+    height: 100%;
+    border-radius: 100px;
+    width: 210px;
+    box-sizing: border-box; /* 不能将盒子寄大 */
+    border: 2px solid #fff;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 10px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    color: #000;
+    background-color: #fff;
+}
+
 .page_header {
     background-color: #fff;
     color: #000;
@@ -65,6 +85,15 @@ a {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
 }
 
+.menu-has-children:hover .span-down::before {
+    transform: rotate(180deg);
+}
+
+.menu-has-children:hover .menu-secondary {
+    display: block;
+    z-index: 100;
+}
+
 .block-menu span, .block-menu a {
     line-height: 37px;
     position: relative;
@@ -110,16 +139,12 @@ a {
 }
 
 .header__leadds a {
-    display: inline-block;
     width: 150px;
-    height: 100%;
-    box-sizing: border-box; /* 不能将盒子寄大 */
     border: 2px solid #000;
-    border-radius: 100px;
+    /* border-radius: 100px; */
     line-height: 40px;
-    text-align: center;
-    padding: 0 10px;
     margin: 0 14px;
+    color: #000;
     transition: 0.5s all ease;
 }
 
@@ -179,4 +204,163 @@ a {
 .menu-secondary-first a {
     padding: 18px 0 0;
     margin: 0 0 12px;
+}
+
+.content-item1 img {
+    display: block;
+}
+
+.content-item1-es6 {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 26%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.content {
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.container-title {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: justify; /* 不会处理被打断的一行和最后一行，在后面加一个伪标签即可 */
+    letter-spacing: 7px;
+}
+
+.container-title img {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.container-title h2 {
+    font-size: 22px;
+    /* color: #fff; */
+    height: 44px;
+}
+
+.container-title h2::after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+.container-title span {
+    position: relative;
+    left: 0;
+    top: -10px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 6px;
+}
+
+.container-title span::after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+.buttons {
+    height: 50px;
+    width: 449px;
+    margin-top: -12px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between; /* 在弹性盒对象的 <div> 元素中的各项周围留有空白 */
+}
+
+.buttons .button {
+    line-height: 46px;
+}
+
+.es8-container {
+    top: 158px;
+}
+
+.content-item1-es8 {
+    position: relative;
+}
+
+.es8-container .container-title {
+    margin-top: 24px;
+}
+
+.es8-container .buttons {
+    margin: 1px 0 34px 0;
+}
+
+.content-item2 {
+    margin:0px 10px 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.content-item2>div {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding: 20px 10px 0;
+    box-sizing: border-box;
+}
+
+/* .content-item2>div:nth-child(2n) {
+    padding-left: 10px;
+    padding-right: 0px;
+} */
+.content-item2-container {
+    top: 18%;
+    transform: translate(-50%, 0);
+}
+.content-item2-container .content {
+    text-align: center;
+}
+
+.container.content-item2-container img {
+    height: 30px;
+    width: auto;
+    margin: 0 auto 12px;
+}
+
+.content-item2-container .container-title, .content-item2-container span{
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.content-item2-1 h2 {
+    font-size: 16px;
+}
+
+.content-item2-container .buttons {
+    display: block;
+    margin-top: -7px;
+}
+
+.content-item2-3 .buttons, .content-item2-4 .buttons {
+    margin-top: -3px;
+}
+
+.content-item3 {
+    clear: left;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.content-item3-container {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 500ms ease 0s;
+}
+
+.content-item3-container.content-item3-block {
+    opacity: 1;
 }
