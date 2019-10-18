@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('---5---');
+        var status = 'global';
+        var obj = {
+            status: 'obj',
+            getStatus: function(a, b, c) {
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                return this.status;
+            }
+        };
+        console.log(obj.getStatus());
+        var fun = obj.getStatus.bind(obj, 1, 2, 3); // call apply 返回值,其中 apply 传值需要将所有值合并为数组在传入；bind 返回函数
+        console.log(fun());
+    </script>
+</body>
+
+</html>
