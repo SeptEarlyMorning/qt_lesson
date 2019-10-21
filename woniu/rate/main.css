@@ -1,0 +1,31 @@
+input {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.rate-content {
+  width: 245px;
+  display: flex;
+  flex-flow: row-reverse;
+}
+.rate-content input[name="rate"] {
+  font-family: "inconfont";
+  font-size: 30px;
+  padding-right: 10px;
+  transition: transform 0.2s ease;
+}
+.rate-content input[name="rate"]:hover,
+.rate-content input[name="rate"]:hover ~ input[name="rate"] {
+  transform: scale(1.2);
+}
+.rate-content input[name="rate"]::after {
+  content: '\e612';
+  color: #999;
+  transition: color 0.4s ease;
+}
+.rate-content input[name="rate"]:checked::after,
+.rate-content input[name="rate"]:checked ~ input[name="rate"]::after {
+  color: #ffa822;
+  content: '\e640';
+}

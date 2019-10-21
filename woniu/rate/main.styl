@@ -1,0 +1,30 @@
+$main = #ffa822
+$basic = #999999
+
+input 
+    -webkit-appearance none
+    border none
+    outline none
+    cursor pointer
+
+.rate-content
+    width 245px
+    display flex
+    flex-flow row-reverse
+    input[name="rate"]
+        font-family "inconfont"
+        font-size 30px
+        padding-right 10px
+        transition transform 0.2s ease
+        &:hover,
+        &:hover ~ input[name="rate"]
+            transform scale(1.2)
+        &::after
+            content '\e612'
+            color $basic
+            transition color 0.4s ease
+        &:checked,
+        &:checked ~ input[name="rate"]
+            &::after
+                color $main
+                content '\e640'
