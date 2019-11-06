@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 一个只能以对象作为键名的 map，weakMap 上的每一个键名的引用也是弱引用 -->
+    <div id="myDiv">111</div>
+    <script>
+        const myElement = document.getElementById('myDiv');
+        let myWeakmap = new WeakMap();
+        myWeakmap.set(myElement, { timesClicked: 0 });
+
+        myElement.addEventListener('click', function () {
+            let myDivData = myWeakmap.get(myElement);
+            myDivData.timesClicked++;
+            console.log(myWeakmap);
+        }, false);
+    </script>
+</body>
+
+</html>
