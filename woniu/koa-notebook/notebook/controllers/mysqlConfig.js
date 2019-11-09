@@ -30,32 +30,32 @@ let allServices = {
             })
         })
     }
-}
+};
 
 // 读取所有users表数据, 测试数据库连接
 let getAllUsers = function() {
-        let _sql = 'select * from users'
-        return allServices.query(_sql)
-    }
-    // 注册用户
+    let _sql = 'select * from users';
+    return allServices.query(_sql);
+};
+// 注册用户
 let insertUser = function(value) {
-    let _sql = `insert into users set username=?,userpwd=?,nickname=?;`
-    return allServies.query(_sql, value)
-}
+    let _sql = `insert into users set username=?,userpwd=?,nickname=?;`;
+    return allServies.query(_sql, value);
+};
 
 // 查找用户的方法
 let findUser = function(username) {
-        let _sql = `select * from users where username='${username}'`;
-        return allServices.query(_sql, username);
-    }
-    // 用户登录
+    let _sql = `select * from users where username='${username}'`;
+    return allServices.query(_sql, username);
+};
+// 用户登录
 let userLogin = function(username, userpwd) {
     let _sql = `select * from users where username='${username}' and userpwd='${userpwd}'`;
     return allServices.query(_sql, username, userpwd);
-}
+};
 module.exports = {
     getAllUsers,
     insertUser,
     findUser,
     userLogin
-}
+};
