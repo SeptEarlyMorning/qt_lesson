@@ -29,6 +29,7 @@ export default {
   box-sizing: content-box;
   min-width: 100%;
   border-top: none;
+  z-index: 1;
 }
 
 .header-nav-second li a {

@@ -60,12 +60,16 @@ export default {
   border-top: none;
   background-color: #fff;
   right: -1px;
+  z-index: 999;
 }
 h1 {
   font-size: 14px;
   color: #222;
   font-weight: 500;
   margin-bottom: 26px;
+}
+a:hover {
+  color: #fe8c00;
 }
 .second-nav {
   text-align: center;
