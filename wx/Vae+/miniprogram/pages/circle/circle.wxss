@@ -1,0 +1,54 @@
+/* miniprogram/pages/circle/circle.wxss */
+
+.vae {
+    position: relative;
+}
+
+.vae__header {
+    height: 116rpx;
+    font-size: 28rpx;
+    display: flex;
+    background-color: #fff;
+}
+
+.vae__header-li {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    line-height: 114rpx;
+    color: #ACB0B5;
+}
+
+.vae__header-li.on {
+    color: #6ca5ff;
+}
+
+.vae__header-line {
+    position: absolute;
+    top: 108rpx;
+    width: 120rpx;
+    height: 4rpx;
+    background: #6ca5ff;
+    transition: all 0.3s linear;
+}
+
+
+/* movable-area, */
+
+movable-view {
+    height: auto;
+    width: 100%;
+}
+
+.vae__content {
+    position: relative;
+    width: 300%;
+    /* transition: transform 10ms linear; */
+}
+
+.vae__content-bar {
+    /* position: absolute; */
+    width: 750rpx;
+    display: inline-block;
+    /* transition: all 0.5s linear; */
+}

@@ -1,0 +1,28 @@
+<!-- miniprogram/pages/circle/circle.wxml -->
+<view class="vae">
+    <view class="vae__header vae{{currentTab}}">
+        <view class="vae__header-li {{currentTab == 0 ? 'on' : ''}}" data-current="0" bindtap="selectNav">
+            动态
+        </view>
+        <view class="vae__header-li {{currentTab == 1 ? 'on' : ''}}" data-current="1" bindtap="selectNav">
+            行程
+        </view>
+        <view class="vae__header-li {{currentTab == 2 ? 'on' : ''}}" data-current="2" bindtap="selectNav">
+            活动
+        </view>
+        <view class="vae__header-line" style="left:{{left}}rpx"></view>
+    </view>
+    <view class="vae__content" style="transform: translateX({{dynamicX}}rpx)">
+        <!-- <view class="d" style="left:{{left}}rpx"> -->
+        <view class="vae__content-bar vae__content-dynamic" style="transform: translateX({{0}}rpx)" data-current="0" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+            1<image class="" mode="scaleToFill" src="../../images/06.jpg"></image>
+        </view>
+        <view class="vae__content-bar vae__content-stroke" style="transform: translateX({{0}}rpx)" data-current="1" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+            2<image class="" mode="scaleToFill" src="../../images/06.jpg"></image>
+        </view>
+        <view class="vae__content-bar vae__content-activity" style="transform: translateX({{0}}rpx)" data-current="2" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+            3<image class="" mode="scaleToFill" src="../../images/06.jpg"></image>
+        </view>
+        <!-- </view> -->
+    </view>
+</view>

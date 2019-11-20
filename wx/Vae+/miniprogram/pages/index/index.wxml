@@ -1,0 +1,41 @@
+<!-- index.wxml -->
+<view class="vae">
+  <view id="vae__header" class="vae__header vae{{currentTab}}">
+    <view class="vae__header-li {{currentTab == 0 ? 'on' : ''}}" data-current="0" bindtap="selectNav">
+      动态
+    </view>
+    <view class="vae__header-li {{currentTab == 1 ? 'on' : ''}}" data-current="1" bindtap="selectNav">
+      行程
+    </view>
+    <view class="vae__header-li {{currentTab == 2 ? 'on' : ''}}" data-current="2" bindtap="selectNav">
+      活动
+    </view>
+    <view class="vae__header-line" style="left:{{left}}rpx"></view>
+  </view>
+  <swiper class="vae__content" current="{{currentTab}}" duration="300" bindchange="swiperChange" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <swiper-item class="vae__content-dynamic" data-current="0" bindtouchmove="touchMove">
+      <view class="vae__content-dynamic-vaeimg">
+        <image src="../../images/06.jpg"></image>
+      </view>
+      <view class="vae__content-xusongcoming">
+        <view class="vae__content-xusongcoming-more">
+          <image src="../../images/icon_vaecoming.png"></image>
+          <text>许嵩来了</text>
+          <navigator class="more">
+            <text>更多</text>
+            <image src="../../images/icon_arrow_right_blue.png"></image>
+          </navigator>
+        </view>
+        <view class="vae__content-xusongcoming-publish">
+          
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item data-current="1" bindtouchmove="touchMove">
+      <view>2</view>
+    </swiper-item>
+    <swiper-item data-current="2" bindtouchmove="touchMove">
+      <view class="a">3</view>
+    </swiper-item>
+  </swiper>
+</view>

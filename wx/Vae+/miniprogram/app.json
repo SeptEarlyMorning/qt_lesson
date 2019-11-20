@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/circle/circle"
+    ],
+    "tabBar": {
+        "color": "#ACB0B5",
+        "selectedColor": "#6ca5ff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "images/icon_home_normal.png",
+                "selectedIconPath": "images/icon_home_select.png",
+                "text": "Vae"
+            },
+            {
+                "pagePath": "pages/circle/circle",
+                "iconPath": "images/icon_group_normal.png",
+                "selectedIconPath": "images/icon_group_select.png",
+                "text": "圈子"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/icon_dicover_normal.png",
+                "selectedIconPath": "images/icon_dicover_select.png",
+                "text": "发现"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/icon_message_normal.png",
+                "selectedIconPath": "images/icon_message_select.png",
+                "text": "消息"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/icon_mine_normal.png",
+                "selectedIconPath": "images/icon_mine_select.png",
+                "text": "我"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#6ca5ff",
+        "navigationBarTitleText": "vae+",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json"
+}

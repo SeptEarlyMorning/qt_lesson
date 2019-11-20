@@ -1,0 +1,110 @@
+/**index.wxss**/
+
+page {
+    height: 100%;
+    color: #ACB0B5;
+}
+
+image {
+    width: 100%;
+}
+
+swiper {
+    height: 100%;
+}
+
+.vae {
+    position: relative;
+    height: 100%;
+}
+
+.vae__header {
+    position: fixed;
+    width: 100%;
+    height: 116rpx;
+    font-size: 34rpx;
+    display: flex;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.vae__header-li {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    line-height: 114rpx;
+    color: #ACB0B5;
+}
+
+.vae__header-li.on {
+    color: #6ca5ff;
+}
+
+.vae__header-line {
+    position: absolute;
+    top: 111rpx;
+    width: 120rpx;
+    height: 6rpx;
+    background: #6ca5ff;
+    transition: all 0.3s linear;
+}
+
+.vae__content {
+    margin-top: 116rpx;
+}
+
+.vae__content-dynamic-vaeimg {
+    height: 390rpx;
+    overflow: hidden;
+}
+
+.vae__content-dynamic-vaeimg image {
+    height: 993.75rpx;
+    transform: translateY(-195rpx);
+}
+
+.vae__content-xusongcoming {
+    background-color: #f2f3f5;
+    height: 420rpx;
+    padding: 30rpx 30rpx 40rpx;
+}
+
+.vae__content-xusongcoming-more {
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 30rpx;
+}
+
+.vae__content-xusongcoming-more>image {
+    position: absolute;
+    height: 32rpx;
+    width: 32rpx;
+    padding-top: 1rpx;
+}
+
+.vae__content-xusongcoming-more text {
+    padding-left: 42rpx;
+    color: #666666;
+}
+
+.vae__content-xusongcoming-more>.more {
+    float: right;
+    right: 20rpx;
+}
+
+.vae__content-xusongcoming-more>.more>text {
+    color: #a8b0b8;
+}
+
+.vae__content-xusongcoming-more>.more>image {
+    height: 24rpx;
+    width: 16.8rpx;
+    margin-left: 10rpx;
+}
+
+.vae__content-xusongcoming-publish {
+    margin: 40rpx 20rpx 0;
+    height: 344rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
