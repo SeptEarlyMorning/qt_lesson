@@ -1,16 +1,19 @@
 <template>
   <div class="exceptHeader">
-      <banner-container />
+    <banner-container />
+    <scenes-container />
   </div>
 </template>
 
 <script>
-import bannerContainer from "../../components/banner/bannerContainer";
+import bannerContainer from "@/components/banner/bannerContainer";
+import scenesContainer from "@/components/scenesContainer";
 
 export default {
   name: "exceptHeader",
   components: {
-    bannerContainer
+    bannerContainer,
+    scenesContainer
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bannerContainer">
     <banner-all-categories />
     <div></div>
     <div class="banner-center">
@@ -27,7 +27,9 @@
       <div class="code-iphone">
         <img src="../../assets/images/code.png" alt width="75" />
         <h1>美团APP手机版</h1>
-        <p><span>1元起</span>吃喝玩乐</p>
+        <p>
+          <span>1元起</span>吃喝玩乐
+        </p>
       </div>
     </div>
   </div>
@@ -58,6 +60,9 @@ export default {
 </script>
 
 <style scoped>
+.bannerContainer {
+  overflow: hidden;
+}
 .banner-center {
   float: left;
   margin-left: 10px;
@@ -142,5 +147,5 @@ export default {
 .code-iphone span {
   color: #ec5300;
   margin-right: 5px;
-} 
+}
 </style>
