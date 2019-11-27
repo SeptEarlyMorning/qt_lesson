@@ -6,6 +6,14 @@ import router from './router'
 import './assets/js/iconfont.js'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+// import axios from 'axios';
+// import QS from 'qs';
+import api from '@/api';
+
+// axios.defaults.baseURL = '/api';
+// Vue.prototype.$axios = axios;
+// Vue.prototype.qs = QS;
+Vue.prototype.$api = api;
 
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false

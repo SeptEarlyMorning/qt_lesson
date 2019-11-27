@@ -1,18 +1,19 @@
 <template>
   <div class="scenesContainer">
     <scenes-container-header />
-    <quality-card />
+    <scenes-container-content />
   </div>
 </template>
 
 <script>
-import qualityCard from "@/components/qualityCard";
 import scenesContainerHeader from "./scenesContainerHeader";
+import scenesContainerContent from "./scenesContainerContent";
+
 export default {
   name: "scenesContainer",
   components: {
-    qualityCard,
-    scenesContainerHeader
+    scenesContainerHeader,
+    scenesContainerContent,
   }
 };
 </script>
