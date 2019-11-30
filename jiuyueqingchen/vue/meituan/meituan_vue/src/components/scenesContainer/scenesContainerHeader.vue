@@ -2,7 +2,13 @@
   <div class="scenesContainerHeader">
     <h1 class="title">有格调</h1>
     <ul @mouseover="switchContent($event)">
-      <li class="nav-item" :mark="index" v-for="(nav, index) in navs" :key="index" :class="active == index ? 'active' : ''">{{nav}}</li>
+      <li
+        class="nav-item"
+        :mark="index"
+        v-for="(tab, index) in qualityAllDataTabs"
+        :key="index"
+        :class="active == index ? 'active' : ''"
+      >{{tab.text}}</li>
     </ul>
   </div>
 </template>
@@ -10,15 +16,21 @@
 <script>
 export default {
   name: "scenesContainerHeader",
+  props: ["qualityAllDataTabs"],
   data() {
     return {
-      active: 0,
-      navs: ["全部", "约会聚餐", "丽人SPA", "电影演出", "品质出游"]
+      active: 0
     };
   },
   methods: {
     switchContent(e) {
       this.active = e.path[0].attributes[1].value;
+      this.$emit('currentTab', this.currentTab)
+    },
+  },
+  computent: {
+    currentTab() {
+      return qualityAllDataTabs[active].tab;
     }
   }
 };

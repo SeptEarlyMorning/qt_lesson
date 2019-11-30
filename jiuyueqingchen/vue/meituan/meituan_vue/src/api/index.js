@@ -149,49 +149,93 @@
 //     }
 // }
 
-import axios from 'axios';
+// import axios from 'axios';
 
-let http = axios.create({
-  baseURL: 'https://nc.meituan.com/ptapi/getScenesList',
-  withCredentials: true,
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-  },
-  transformRequest: [function (data) {
-    let newData = '';
-    for (let k in data) {
-      if (data.hasOwnProperty(k) === true) {
-        newData += encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) + '&';
-      }
-    }
-    return newData;
-  }]
-});
+// let http = axios.create({
+//   baseURL: 'https://nc.meituan.com/ptapi/getScenesList',
+//   withCredentials: true,
+//   headers: {
+//     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+//   },
+//   transformRequest: [function (data) {
+//     let newData = '';
+//     for (let k in data) {
+//       if (data.hasOwnProperty(k) === true) {
+//         newData += encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) + '&';
+//       }
+//     }
+//     return newData;
+//   }]
+// });
 
-function apiAxios(method, url, params, response) {
-  http({
-    method: method,
-    url: url,
-    data: method === 'POST' || method === 'PUT' ? params : null,
-    params: method === 'GET' || method === 'DELETE' ? params : null,
-  }).then(function (res) {
-    response(res);
-  }).catch(function (err) {
-    response(err);
-  })
+// function apiAxios(method, url, params, response) {
+//   http({
+//     method: method,
+//     url: url,
+//     data: method === 'POST' || method === 'PUT' ? params : null,
+//     params: method === 'GET' || method === 'DELETE' ? params : null,
+//   }).then(function (res) {
+//     response(res);
+//   }).catch(function (err) {
+//     response(err);
+//   })
+// }
+
+// export default {
+//   get: function (url, params, response) {
+//     return apiAxios('GET', url, params, response)
+//   },
+//   post: function (url, params, response) {
+//     return apiAxios('POST', url, params, response)
+//   },
+//   put: function (url, params, response) {
+//     return apiAxios('PUT', url, params, response)
+//   },
+//   delete: function (url, params, response) {
+//     return apiAxios('DELETE', url, params, response)
+//   }
+// }
+
+const fs = require('fs');
+const url = require('url');
+// const gbk = require('gbk');
+let index = 0;
+
+// getUrl('https://nc.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=83&limit=12');
+
+function getUrl(sUrl, success = data => {
+    fs.writeFile('meituan.json', data, function (err) {
+        if (err) throw err;
+        console.log('It\'s saved!');
+    });
+}) {
+    index++;
+    let urlObj = url.parse(sUrl);
+    const http = urlObj.protocol === 'http:' ? require('http') : require('https');
+    let req = http.request({
+        hostname: urlObj.hostname,
+        path: urlObj.path
+    }, res => {
+        console.log(res.statusCode);
+        if (res.statusCode == 200) {
+            const arr = [];
+            res.on('data', buffer => {
+                arr.push(buffer);
+            });
+            res.on('end', () => {
+                let b = Buffer.concat(arr);
+                success && success(b);
+            })
+        } else if (res.statusCode == 302 || res.statusCode == 301) {
+            console.log(`${index}: ${res.headers.location}`);
+            getUrl(res.headers.location, success);
+        }
+    });
+
+    req.end();
+    req.on('error', () => {
+        console.log('404');
+    })
 }
 
-export default {
-  get: function (url, params, response) {
-    return apiAxios('GET', url, params, response)
-  },
-  post: function (url, params, response) {
-    return apiAxios('POST', url, params, response)
-  },
-  put: function (url, params, response) {
-    return apiAxios('PUT', url, params, response)
-  },
-  delete: function (url, params, response) {
-    return apiAxios('DELETE', url, params, response)
-  }
-}
+module.exports = getUrl;

@@ -1,11 +1,6 @@
 <template>
   <div class="scenes-container-content">
-    <quality-card />
-    <quality-card />
-    <quality-card />
-    <quality-card />
-    <quality-card />
-    <quality-card />
+    <quality-card v-for="data in qualityAllDataContent" :key="data.id" :data="data" />
   </div>
 </template>
 
@@ -18,14 +13,9 @@ export default {
   components: {
     qualityCard
   },
-  created() {
-    this.$api.get(
-      "",
-      { theme: "quality", tab: "all", ci: 83, limit: 12 },
-      r => {
-        console.log(r);
-      }
-    );
+  props: ["qualityAllDataContent"],
+  data() {
+    return {};
   }
 };
 </script>

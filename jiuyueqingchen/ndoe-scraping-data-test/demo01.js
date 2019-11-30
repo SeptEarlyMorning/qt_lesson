@@ -89,7 +89,7 @@ const url = require('url');
 const gbk = require('gbk');
 let index = 0;
 
-getUrl('https://nc.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=83&limit=12', (data, str) => {
+getUrl('http://localhost:3000/getJson', (data, str) => {
   let html = gbk.toString('utf-8', data);
   // console.log(html);
   // console.log(str);
@@ -112,9 +112,12 @@ function getUrl(sUrl, success) {
   //   http = require('https');
   // }
 
+  console.log(urlObj);
+  
   let req = http.request({
     hostname: urlObj.hostname,
     path: urlObj.path,
+    port: urlObj.port,
     headers: {
     //   // 'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
 

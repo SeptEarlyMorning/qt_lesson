@@ -1,21 +1,27 @@
 <template>
   <a href="#" class="quality-card">
-    <img src="@/assets/images/d908da2425934fbe9db0baa6f4d6165c430593.jpg" alt />
-    <h1>启达西饼生日蛋糕</h1>
-    <p>蛋糕7选1，约6英寸， 方形</p>
+    <img :src="computedImgUrl" alt />
+    <h1>{{data.title}}</h1>
+    <p>{{data.subTitle}}</p>
     <span class="now-price">
-      <span class="unit">￥</span>79
+      <span class="unit">￥</span>
+      <span class="num">{{data.currentPrice}}</span>
     </span>
-    <s class="old-price">门市价￥118</s>
-    <span class="location">象湖</span>
+    <s class="old-price">{{data.oldPrice}}</s>
+    <span class="location">{{data.bottomInfo}}</span>
   </a>
 </template>
 
 <script>
-import https from '@/api';
-
 export default {
-  name: "qualityCard"
+  name: "qualityCard",
+  props: ["data"],
+  computed: {
+    computedImgUrl() {
+      const imgUrl = this.data.imgUrl.replace(/\/w\.h/g, '') + '@368w_208h_1e_1c';
+      return imgUrl;
+    }
+  }
 };
 </script>
 
@@ -54,7 +60,7 @@ export default {
 }
 
 .quality-card .now-price {
-  font-size: 22px;
+  font-size: 0px;
   color: #be9e4d;
   margin-right: 6px;
   letter-spacing: -0.8px;
@@ -65,13 +71,16 @@ export default {
   color: #be9e4d;
 }
 
+.quality-card .now-price .num {
+  font-size: 22px;
+}
 
 .quality-card .old-price {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .quality-card .location {
-    font-size: 12px;
-    float: right;
+  font-size: 12px;
+  float: right;
 }
 </style>

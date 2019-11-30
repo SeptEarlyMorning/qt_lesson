@@ -60,8 +60,10 @@ export default {
 </script>
 
 <style scoped>
-.bannerContainer {
-  overflow: hidden;
+.bannerContainer::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 .banner-center {
   float: left;
