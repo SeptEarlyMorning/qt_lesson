@@ -1,11 +1,11 @@
 <template>
   <div class="scenesContainerHeader">
-    <h1 class="title">有格调</h1>
+    <h1 class="title">{{secensTitle.text}}</h1>
     <ul @mouseover="switchContent($event)">
       <li
         class="nav-item"
         :mark="index"
-        v-for="(tab, index) in qualityAllDataTabs"
+        v-for="(tab, index) in allDataTabs"
         :key="index"
         :class="active == index ? 'active' : ''"
       >{{tab.text}}</li>
@@ -16,7 +16,7 @@
 <script>
 export default {
   name: "scenesContainerHeader",
-  props: ["qualityAllDataTabs"],
+  props: ["allDataTabs", "secensTitle"],
   data() {
     return {
       active: 0
@@ -25,13 +25,17 @@ export default {
   methods: {
     switchContent(e) {
       this.active = e.path[0].attributes[1].value;
-      this.$emit('currentTab', this.currentTab)
+      // console.log(this.qualityAllDataTabs[this.active].tab);
+      
+      this.$emit('currentTab', this.allDataTabs[this.active].tab)
     },
   },
-  computent: {
-    currentTab() {
-      return qualityAllDataTabs[active].tab;
-    }
+  computed: {
+    // currentTab() {
+      // console.log(1);
+      
+      // return qualityAllDataTabs[active].tab;
+    // }
   }
 };
 </script>

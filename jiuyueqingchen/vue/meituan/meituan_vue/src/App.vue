@@ -15,7 +15,6 @@ export default {
 @import './assets/css/iconfont.css';
 @import '//at.alicdn.com/t/font_1489605_f6atq7xdgka.css';
 #app {
-  height: 1400px;
   background-color: #f8f8f8;
   font-family: "-apple-system","BlinkMacSystemFont","Roboto","Helvetica Neue","MIcrosoft YaHei",sans-serif !important
 }

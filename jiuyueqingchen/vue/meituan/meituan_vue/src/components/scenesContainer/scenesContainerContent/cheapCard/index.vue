@@ -3,6 +3,7 @@
     <img :src="computedImgUrl" alt />
     <h1>{{data.title}}</h1>
     <p>{{data.subTitle}}</p>
+    <div class="tags-wrapper"></div>
     <span class="now-price">
       <span class="unit">￥</span>
       <span class="num">{{data.currentPrice}}</span>
@@ -14,24 +15,24 @@
 
 <script>
 export default {
-  name: "qualityCard",
+  name: "cheapCard",
   props: ["data"],
   computed: {
     computedImgUrl() {
       const imgUrl = this.data.imgUrl
         .replace(/\/w\.h/g, "")
-        .replace(/(?<=\.(jpg|png|jpeg))[\s\S]*$/g, "@368w_208h_1e_1c");
+        .replace(/(?<=\.(jpg|png|jpeg))[\s\S]*$/g, "@213w_120h_1e_1c");
       return imgUrl;
     }
   }
 };
 </script>
+
 <style scoped>
 .quality-card {
   display: inline-block;
-  width: 33.3%;
-  height: 314px;
-  box-sizing: border-box;
+  width: 213px;
+  height:270px;
   padding: 10px;
   background-color: #fff;
   transition: background-color 500ms;
@@ -62,7 +63,12 @@ export default {
   overflow: hidden;
   white-space: nowrap;
 }
-
+.quality-card .tags-wrapper {
+    font-size: 12px;
+    color: #999;
+    height: 20px;
+    margin-bottom: 10px;
+}
 .quality-card .now-price {
   font-size: 0px;
   color: #be9e4d;
@@ -86,5 +92,6 @@ export default {
 .quality-card .location {
   font-size: 12px;
   float: right;
+  margin-top: 10px;
 }
 </style>

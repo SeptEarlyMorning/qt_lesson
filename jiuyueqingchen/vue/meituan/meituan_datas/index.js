@@ -17,14 +17,124 @@ app.use(async(ctx, next) => {
     await next();
 })
 
-router.post('/getJson', ctx => {
+router.post('/quality/all', ctx => {
     // await KoaCors();
-    ctx.body = JSON.parse(fs.readFileSync('./meituan.json'));
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/all.json'));
 });
 
-router.get('/getJson', ctx => {
+router.get('/quality/all', ctx => {
     // await KoaCors();
-    ctx.body = JSON.parse(fs.readFileSync('./meituan.json'));
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/all.json'));
+});
+
+router.post('/quality/feast', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/feast.json'));
+});
+
+router.get('/quality/feast', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/feast.json'));
+});
+
+router.post('/quality/journey', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/journey.json'));
+});
+
+router.get('/quality/journey', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/journey.json'));
+});
+
+router.post('/quality/show', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/show.json'));
+});
+
+router.get('/quality/show', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/show.json'));
+});
+
+router.post('/quality/spa', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/spa.json'));
+});
+
+router.get('/quality/spa', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/quality/spa.json'));
+});
+
+router.post('/cheap/all', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/cheap/all.json'));
+});
+
+router.get('/cheap/all', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/cheap/all.json'));
+});
+
+router.post('/cheap/food', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/cheap/food.json'));
+});
+
+router.get('/cheap/food', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/cheap/food.json'));
+});
+
+router.post('/cheap/xiuyu', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/cheap/xiuyu.json'));
+});
+
+router.get('/cheap/xiuyu', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/cheap/xiuyu.json'));
+});
+
+router.post('/films/coming', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/films/coming.json'));
+});
+
+router.get('/films/coming', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/films/coming.json'));
+});
+
+router.post('/films/hot', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/films/hot.json'));
+});
+
+router.get('/films/hot', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/films/hot.json'));
+});
+
+router.post('/citys/citys', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/citys.json'));
+});
+
+router.get('/citys/citys', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/citys.json'));
+});
+
+router.post('/recommends/recommends', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/recommends/recommends.json'));
+});
+
+router.get('/recommends/recommends', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/recommends/recommends.json'));
 });
 
 app.use(router.routes()).use(router.allowedMethods());
