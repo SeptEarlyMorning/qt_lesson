@@ -9,7 +9,7 @@
       v-if="currentQualitydata"
       :secensTitle="scenesContainerData.title"
       :currentQualitydata="currentQualitydata"
-      :currentQualityTab="currentQualityTab"
+      :currentQualityTab="currentQualityTab.tab"
     />
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
         this.scenesContainerData.data.tab.tab) ||
       this.tabs[0];
     this.currentQualitydata = this.scenesContainerData.data.data;
+    
   },
   // watch: {
   //   scenesContainerData: function(newVal, oldVal) {
@@ -78,17 +79,15 @@ export default {
   },
   methods: {
     getCurrentTab(data) {
-      if (this.currentQualityTab !== data) {
+      if (this.currentQualityTab.tab != data.tab) {
         this.currentQualityTab = data;
-
         for (const qualityData of this.qualityDatas) {
-          if (qualityData.tab.tab === data) {
+          if (qualityData.tab === undefined ? qualityData.data[data.tab].length != 0 : qualityData.tab.tab === data) {
             this.currentQualitydata = qualityData.data;
             return;
           }
         }
-
-        this.getCurrentQualitydata(data);
+        this.getCurrentQualitydata(data.tab);
       }
     },
     getCurrentQualitydata(data) {

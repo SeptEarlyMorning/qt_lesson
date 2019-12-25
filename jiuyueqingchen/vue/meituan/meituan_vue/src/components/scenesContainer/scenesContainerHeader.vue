@@ -8,7 +8,7 @@
         v-for="(tab, index) in allDataTabs"
         :key="index"
         :class="active == index ? 'active' : ''"
-      >{{tab.text}}</li>
+      >{{tab.text === undefined ? tab.cityName : tab.text}}</li>
     </ul>
   </div>
 </template>
@@ -26,8 +26,16 @@ export default {
     switchContent(e) {
       this.active = e.path[0].attributes[1].value;
       // console.log(this.qualityAllDataTabs[this.active].tab);
+      // console.log(this.allDataTabs[this.active].tab);
+      console.log(this.allDataTabs);
+      for (const iterator of this.allDataTabs) {
+        console.log(iterator.text);
+        
+      }
+      const currentTab = this.allDataTabs[this.active] && this.allDataTabs[this.active].tab && this.allDataTabs[this.active];
+      console.log(currentTab);
       
-      this.$emit('currentTab', this.allDataTabs[this.active].tab)
+      this.$emit('currentTab', currentTab);
     },
   },
   computed: {
