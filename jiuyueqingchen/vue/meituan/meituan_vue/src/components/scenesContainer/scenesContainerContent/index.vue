@@ -27,6 +27,12 @@
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </template>
+    <template v-else-if="secensTitle.title === 'citys'">
+      <citys-card v-for="data in currentQualitydata" :key="data.id" :data="data" />
+    </template>
+    <template v-else-if="secensTitle.title === 'recommends'">
+      <recommends-card v-for="data in currentQualitydata" :key="data.id" :data="data" />
+    </template>
   </div>
 </template>
 
@@ -34,13 +40,17 @@
 import qualityCard from "./qualityCard";
 import cheapCard from "./cheapCard";
 import filmsCard from "./filmsCard";
+import citysCard from "./citysCard";
+import recommendsCard from "./recommendsCard";
 
 export default {
   name: "scenesContainerContent",
   components: {
     qualityCard,
     cheapCard,
-    filmsCard
+    filmsCard,
+    citysCard,
+    recommendsCard
   },
   props: ["secensTitle", "currentQualitydata", "currentQualityTab"],
   data() {
@@ -54,7 +64,7 @@ export default {
         slidesPerView: 5,
         slidesPerGroup: 5,
         spaceBetween: 19,
-        effect: 'slide',
+        effect: "slide",
         pagination: {
           el: ".swiper-pagination", //分页器作用对象
           clickable: false //分页器小圆点是否可点击
@@ -62,7 +72,7 @@ export default {
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
-        },
+        }
         // autoplay: {
         //   delay: 4000,
         //   stopOnLastSlide: false,

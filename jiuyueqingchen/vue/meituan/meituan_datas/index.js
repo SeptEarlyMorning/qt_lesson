@@ -127,6 +127,206 @@ router.get('/citys/citys', ctx => {
     ctx.body = JSON.parse(fs.readFileSync('./datas/citys/citys.json'));
 });
 
+router.post('/citys/320100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/320100.json'));
+});
+
+router.get('/citys/320100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/320100.json'));
+});
+
+router.post('/citys/330100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/330100.json'));
+});
+
+router.get('/citys/330100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/330100.json'));
+});
+
+router.post('/citys/340100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/340100.json'));
+});
+
+router.get('/citys/340100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/340100.json'));
+});
+
+router.post('/citys/341000', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/341000.json'));
+});
+
+router.get('/citys/341000', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/341000.json'));
+});
+
+router.post('/citys/350100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/350100.json'));
+});
+
+router.get('/citys/350100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/350100.json'));
+});
+
+router.post('/citys/350500', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/350500.json'));
+});
+
+router.get('/citys/350500', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/350500.json'));
+});
+
+router.post('/citys/350600', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/350600.json'));
+});
+
+router.get('/citys/350600', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/350600.json'));
+});
+
+router.post('/citys/420100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/420100.json'));
+});
+
+router.get('/citys/420100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/420100.json'));
+});
+
+router.post('/citys/420500', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/420500.json'));
+});
+
+router.get('/citys/420500', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/420500.json'));
+});
+
+router.post('/citys/430100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/430100.json'));
+});
+
+router.get('/citys/430100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/430100.json'));
+});
+
+router.post('/citys/120100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/120100.json'));
+});
+
+router.get('/citys/120100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/120100.json'));
+});
+
+router.post('/citys/370100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/370100.json'));
+});
+
+router.get('/citys/370100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/370100.json'));
+});
+
+router.post('/citys/210200', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/210200.json'));
+});
+
+router.get('/citys/210200', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/210200.json'));
+});
+
+router.post('/citys/140100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/140100.json'));
+});
+
+router.get('/citys/140100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/140100.json'));
+});
+
+router.post('/citys/130100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/130100.json'));
+});
+
+router.get('/citys/130100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/130100.json'));
+});
+
+router.post('/citys/130300', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/130300.json'));
+});
+
+router.get('/citys/130300', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/130300.json'));
+});
+
+router.post('/citys/150100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/150100.json'));
+});
+
+router.get('/citys/150100', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/150100.json'));
+});
+
+router.post('/citys/370700', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/370700.json'));
+});
+
+router.get('/citys/370700', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/370700.json'));
+});
+
+router.post('/citys/130200', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/130200.json'));
+});
+
+router.get('/citys/130200', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/130200.json'));
+});
+
+router.post('/citys/370900', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/370900.json'));
+});
+
+router.get('/citys/370900', ctx => {
+    // await KoaCors();
+    ctx.body = JSON.parse(fs.readFileSync('./datas/citys/370900.json'));
+});
+
 router.post('/recommends/recommends', ctx => {
     // await KoaCors();
     ctx.body = JSON.parse(fs.readFileSync('./datas/recommends/recommends.json'));

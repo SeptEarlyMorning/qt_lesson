@@ -28,11 +28,11 @@ export default {
       // console.log(this.qualityAllDataTabs[this.active].tab);
       // console.log(this.allDataTabs[this.active].tab);
       console.log(this.allDataTabs);
-      for (const iterator of this.allDataTabs) {
-        console.log(iterator.text);
+      // for (const iterator of this.allDataTabs) {
+      //   console.log(iterator.cityName);
         
-      }
-      const currentTab = this.allDataTabs[this.active] && this.allDataTabs[this.active].tab && this.allDataTabs[this.active];
+      // }
+      const currentTab = this.allDataTabs[this.active] && (this.allDataTabs[this.active].tab || this.allDataTabs[this.active].cityName) && this.allDataTabs[this.active];
       console.log(currentTab);
       
       this.$emit('currentTab', currentTab);
