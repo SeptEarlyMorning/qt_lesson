@@ -3,16 +3,18 @@ import List from './List';
 
 export default class Lists extends Component {
 	render() {
-		let { datas, changeDone } = this.props;
+		let { datas, changeDone, deleteList, changeList } = this.props;
 
 		return (
 			<ul className="lists">
 				{
-					datas.map((item, index) => {
+					datas.map(item => {
 						return <List
-							key={index}
+							key={item.id}
 							data={item}
 							changeDone={changeDone}
+							deleteList={deleteList}
+							changeList={changeList}
 						/>;
 					})
 				}

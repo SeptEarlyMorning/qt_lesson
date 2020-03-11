@@ -20,7 +20,6 @@ export default class Input extends Component {
 					});
 				}}
 				onKeyUp={({ keyCode }) => {
-					console.log(keyCode);
 					if (keyCode === 13) {
 						if (!val.trim()) {
 							alert('请输入些内容');

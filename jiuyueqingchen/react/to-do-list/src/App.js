@@ -45,6 +45,25 @@ class App extends Component {
     })
   };
 
+  deleteList = (id) => {
+    let { datas } = this.state;
+    this.setState({
+      datas: datas.filter(data => data.id !== id)
+    });
+  };
+
+  changeList = (id, content) => {
+    let { datas } = this.state;
+    for (const data of datas) {
+      if (data.id === id) {
+        data.content = content;
+      }
+    }
+    this.setState({
+      datas
+    });
+  }
+
   render() {
     let { datas } = this.state;
 
@@ -57,6 +76,8 @@ class App extends Component {
         <Lists
           datas={datas}
           changeDone={this.changeDone}
+          deleteList={this.deleteList}
+          changeList={this.changeList}
         />
       </div>
     );
