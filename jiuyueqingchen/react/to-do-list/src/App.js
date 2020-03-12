@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Input from './Input';
 import Lists from './Lists';
+import Schedule from './Schedule.js';
 
 class App extends Component {
   state = {
@@ -62,7 +63,14 @@ class App extends Component {
     this.setState({
       datas
     });
-  }
+  };
+
+  deleteAllDoneLists = () => {
+    let { datas } = this.state;
+    this.setState({
+      datas: datas.filter((data) => data.done === false)
+    });
+  };
 
   render() {
     let { datas } = this.state;
@@ -78,6 +86,11 @@ class App extends Component {
           changeDone={this.changeDone}
           deleteList={this.deleteList}
           changeList={this.changeList}
+        />
+        <div className=""></div>
+        <Schedule
+          datas={datas}
+          deleteAllDoneLists={this.deleteAllDoneLists}
         />
       </div>
     );

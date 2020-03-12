@@ -134,3 +134,31 @@ ul, ol {
   outline: none;
   border: 1px solid #999;
 }
+
+.to-do-list>.list-schedule {
+  position: relative;
+  margin-top: 16px;
+}
+
+.to-do-list>.list-schedule>p {
+  display: inline-block;
+}
+
+.to-do-list>.list-schedule>.to-be-completed {
+  position: relative;
+  font-size: 16px;
+}
+
+.to-do-list>.list-schedule>.clear-complete {
+  position: absolute;
+  right: 4px;
+  bottom: 0;
+  font-size: 12px;
+  color: #999;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.hide {
+  display: none !important;
+}
