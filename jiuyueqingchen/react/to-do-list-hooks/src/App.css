@@ -1,0 +1,168 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+html, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  background-color: #eee;
+  color: #333;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.to-do-list {
+  width: 480px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+}
+
+.title {
+  height: 80px;
+  line-height: 80px;
+  font-size: 28px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.new-list {
+  font-size: 24px;
+  padding: 6px;
+  width: 466px;
+  outline: none;
+  border: 1px solid #999999;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+} 
+
+.new-list::-webkit-input-placeholder {
+  font-style: italic; /* 输入框提示字体为斜体 */
+}
+
+.lists {
+  position: relative;
+}
+
+.lists>li {
+  position: relative;
+  border-bottom: 1px solid #999;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+
+.lists>.done {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.lists>li>.check {
+  position: relative;
+  float: left;
+  margin: 0 10px 0px 7px;
+  top: 17px;
+}
+
+.lists .content {
+  line-height: 50px;
+  height: 50px;
+}
+
+.lists .delete {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 4px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background: url(./img/destroy.png) no-repeat 0 0;
+}
+
+.lists .delete:hover {
+  background-position-y: -20px;
+}
+
+.lists>li:hover>.delete {
+  display: block;
+}
+
+.lists .edit-content {
+  display: none;
+}
+
+.lists>.edit>.edit-content {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: -50px;
+}
+
+.lists .edit-content .editInput {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  font-size: 24px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #999;
+}
+
+.to-do-list>.list-schedule {
+  position: relative;
+  margin-top: 16px;
+}
+
+.to-do-list>.list-schedule>p {
+  display: inline-block;
+}
+
+.to-do-list>.list-schedule>.to-be-completed {
+  position: relative;
+  font-size: 16px;
+}
+
+.to-do-list>.list-schedule>.clear-complete {
+  position: absolute;
+  right: 4px;
+  bottom: 0;
+  font-size: 12px;
+  color: #999;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.hide {
+  display: none !important;
+}
+
+.a {
+  display: none;
+}
