@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState} from 'react';
 
 export default function Input(props) {
-	const {setDatas} = props;
+	const { addList } = props;
+	const [val, setVal] = useState();
 
 	return (
 		<input
@@ -9,11 +10,18 @@ export default function Input(props) {
 			type="text"
 			placeholder="What needs to be done?"
 			autoComplete="off"
-			onKeyUp={({ keyCode, target }) => {
+			value={val}
+			onChange={({ target }) => {
+				setVal(target.value);
+				console.log(val);
+			}}
+			onKeyUp={({ keyCode }) => {
 				if (keyCode === 13) {
-					if (target.value.trim()) {
+					if (!val.trim()) {
+						alert('请输入些内容');
 					} else {
-						alert('请输入些东西');
+						addList(val);
+						setVal('');
 					}
 				}
 			}}
