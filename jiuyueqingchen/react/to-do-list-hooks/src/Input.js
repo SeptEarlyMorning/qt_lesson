@@ -1,8 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 
 export default function Input(props) {
 	const { addList } = props;
-	const [val, setVal] = useState();
+	const [val, setVal] = useState('');
 
 	return (
 		<input
@@ -13,7 +13,6 @@ export default function Input(props) {
 			value={val}
 			onChange={({ target }) => {
 				setVal(target.value);
-				console.log(val);
 			}}
 			onKeyUp={({ keyCode }) => {
 				if (keyCode === 13) {

@@ -26,9 +26,7 @@ function App() {
         break;
       }
     }
-    this.setState({
-      datas: datas
-    });
+    setDatas([...datas]);
   };
 
   const addList = (content) => {
@@ -41,29 +39,20 @@ function App() {
   };
 
   const deleteList = (id) => {
-    let { datas } = this.state;
-    this.setState({
-      datas: datas.filter(data => data.id !== id)
-    });
+    setDatas([...datas.filter(data => data.id !== id)]);
   };
 
   const changeList = (id, content) => {
-    let { datas } = this.state;
     for (const data of datas) {
       if (data.id === id) {
         data.content = content;
       }
     }
-    this.setState({
-      datas
-    });
+    setDatas([...datas]);
   };
 
   const deleteAllDoneLists = () => {
-    let { datas } = this.state;
-    this.setState({
-      datas: datas.filter((data) => data.done === false)
-    });
+    setDatas([...datas.filter((data) => data.done === false)]);
   };
 
   return (
@@ -86,7 +75,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;
