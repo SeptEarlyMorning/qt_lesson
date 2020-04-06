@@ -14,7 +14,7 @@ const router = [{
   render: (props) => {
     const { location } = props;
     const path = location.pathname.split('/');
-    if (tab.includes(path[1]) && path[2] > 0) {
+    if (tab.includes(path[1]) && path[2] > 0 && path[2] < 41) {
       return <Inner />
     }
     return <Page404 />

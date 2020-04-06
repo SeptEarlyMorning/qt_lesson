@@ -1,10 +1,11 @@
 import React from 'react';
+import Item from './Item';
 
 function List(props) {
-  const { data } = props;
-  
-  return <li 
-  >{data.title}</li>;
+  const { datas } = props;
+
+  return <ul
+  >{datas.map((data) => <Item key={data.id} data={data} />)}</ul>;
 }
 
 export default List;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './component/Nav';
 import './App.css';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import router from './router/router';
 
 function App() {
