@@ -11,7 +11,7 @@ function Nav(props) {
           to={navData.path}
           exact={navData.exact}
           activeClassName='select'
-        >{navData.txt} | </NavLink>
+        >{navData.txt}</NavLink>
       })
     }</nav>
   );

@@ -5,6 +5,7 @@ function List(props) {
   const { datas } = props;
 
   return <ul
+    className='list'
   >{datas.map((data) => <Item key={data.id} data={data} />)}</ul>;
 }
 

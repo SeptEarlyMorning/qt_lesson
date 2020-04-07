@@ -4,6 +4,7 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import router from './router/router';
 
+// 仿 cnode 主页，react + react-router + axios
 function App() {
   return (
     <div className="App">

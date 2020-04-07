@@ -10,15 +10,26 @@ a {
 }
 
 .App {
-  width: 100%;
+  width: 65vw;
+  min-width: 600px;
   background-color: #fff;
-  height: 900px;
+  /* height: 900px; */
   box-sizing: border-box;
   border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Nav */
+.nav {
+  padding: 10px;
+  background-color: #f6f6f6;
 }
 
 .nav a {
-  width: 100%;
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 5px;
   color: #80bd01;
 }
 
@@ -26,4 +37,114 @@ a {
   color: #fff;
   background-color: #80bd01;
   border-radius: 3px;
+}
+
+/* list */
+.list>.list-item {
+  position: relative;
+  padding: 10px;
+  border-top: 1px solid #f0f0f0;
+  height: 30px;
+}
+
+.list>.list-item:first-child {
+  border-top: none;
+}
+
+.list-item .author-avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #aaa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-item .reply-visit-container {
+  display: inline-block;
+  height: 30px;
+  width: 70px;
+  text-align: center;
+}
+
+.list-item .reply-count {
+  overflow: hidden;
+  display: inline-block;
+  font-size: 14px;
+  color: #9e78c0;
+  height: 100%;
+  line-height: 30px;
+}
+
+.list-item .seperator {
+  overflow: hidden;
+  display: inline-block;
+  font-size: 10px;
+  color: #333;
+  height: 100%;
+  line-height: 30px;
+  margin: 0 1px;
+}
+
+.list-item .visit-count {
+  overflow: hidden;
+  display: inline-block;
+  font-size: 10px;
+  color: #b4b4b4;
+  height: 100%;
+  line-height: 30px;
+}
+
+.list-item .list-item-title {
+  display: inline-block;
+  width: 60%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.list-item .last-reply {
+  position: absolute;
+  right: 10px;
+  font-size: 12px;
+  color: #778087;
+  overflow: hidden;
+  line-height: 30px;
+  height: 30px;
+}
+
+/* list-nav */
+.list-nav {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-left: none;
+  width: fit-content;
+}
+
+.list-nav>li {
+  display: inline-block;
+  height: 30px;
+  color: #778087;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.list-nav>li.noLink {
+  padding: 8px 12px;
+}
+
+.list-nav>li.noLink.page {
+  color: #80bd01;
+}
+
+.list-nav>li>a {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #778087;
 }
