@@ -6,16 +6,10 @@ function getTime(lastReplyTime) {
   let nowTime = new Date();
   let total = (nowTime - lastReplyTime) / 1000; // 总秒数
   if (total >= 60) {
-    console.log(total);
     if ((total /= 60) >= 60) {
-      console.log(total);
       if ((total /= 60) >= 24) {
-        console.log(total);
         if ((total /= 24) >= 30) {
-            console.log(total);
           if ((total /= 360) >= 1) {
-            console.log(total);
-            
             time = `${Math.floor(total)}年前`;
           } else {
             time = `${Math.floor(total * 12)}个月前`;

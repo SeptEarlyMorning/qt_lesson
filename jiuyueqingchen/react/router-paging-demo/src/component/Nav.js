@@ -2,7 +2,7 @@ import React from 'react';
 import navDatas from '../router/nav';
 import { NavLink } from 'react-router-dom';
 
-function Nav(props) {
+function Nav() {
   return (
     <nav className="nav">{
       navDatas.map((navData) => { 

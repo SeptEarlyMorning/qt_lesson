@@ -1,33 +1,33 @@
 const navDatas = [{
   id: 0,
-  path: '/all/1',
+  path: '/all',
   txt: '全部',
-  exact: true
+  exact: false
 }, {
   id: 1,
-  path: '/good/1',
+  path: '/good',
   txt: '精华',
-  exact: true
+  exact: false
 }, {
   id: 2,
-  path: '/share/1',
+  path: '/share',
   txt: '分享',
-  exact: true
+  exact: false
 }, {
   id: 3,
-  path: '/ask/1',
+  path: '/ask',
   txt: '问答',
-  exact: true
+  exact: false
 }, {
   id: 6,
-  path: '/job/1',
+  path: '/job',
   txt: '招聘',
-  exact: true
+  exact: false
 }, {
   id: 7,
-  path: '/dev/1',
+  path: '/dev',
   txt: '客户端测试',
-  exact: true
+  exact: false
 }];
 
 export default navDatas;
