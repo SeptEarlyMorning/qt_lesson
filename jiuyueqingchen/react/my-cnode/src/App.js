@@ -1,12 +1,39 @@
 import React from 'react';
 import './static/css/App.css';
-import { Button } from 'antd';
+import { useSelector } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
+import { Layout, Button } from 'antd'
+import { route } from './router';
+import { Header, Footer } from './components';
 
 function App() {
+  console.log(useSelector(state => state.topics));
+  const { Content } = Layout;
+
   return (
-    <div className="App">
-      <Button>button</Button>
-    </div>
+    <Layout>
+      <Header />
+      <Content>
+        <div className='warp content'>
+          <Switch>{
+            route.map(item => {
+              return (
+                <Route
+                  key={item.id}
+                  path={item.path}
+                  exact={item.exact}
+                  render={(props) => {
+                    return item.render(props);
+                  }}
+                />
+              );
+            })
+          }</Switch>
+        </div>
+        <Button>dd</Button>
+      </Content>
+      <Footer>footer</Footer>
+    </Layout>
   );
 }
 
