@@ -50,7 +50,7 @@ const route = [{
   render(props) {
     return <Page404 {...props} />
   }
-}];
+},];
 
 const nav = [{
   to: '/',
@@ -72,7 +72,28 @@ const nav = [{
   txt: '登录'
 },];
 
+const homeNav = [{
+  to: '/?tab=all',
+  txt: '全部'
+}, {
+  to: '/?tab=good',
+  txt: '精华'
+}, {
+  to: '/?tab=share',
+  txt: '分享'
+}, {
+  to: '/?tab=ask',
+  txt: '问答'
+}, {
+  to: '/?tab=job',
+  txt: '招聘'
+}, {
+  to: '/?tab=dev',
+  txt: '客户端测试'
+},];
+
 export {
   route,
-  nav
+  nav,
+  homeNav,
 };

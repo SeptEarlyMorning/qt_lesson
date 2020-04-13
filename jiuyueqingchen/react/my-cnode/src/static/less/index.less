@@ -2,6 +2,10 @@
   @media screen {
     margin: 0 5px;
 
+    .right {
+      display: none;
+    }
+
     @media (max-width: 576px) {
 
       .logo {
@@ -46,20 +50,42 @@
 
     @media (min-width: 768px) {
       margin: 0 15px;
+      width : auto;
+    }
+
+    @media (min-width: 942px) {
+      margin: 0 auto;
+      width : 912px;
+
+      .left {
+        width: min-content;
+        float: left;
+      }
+      .right {
+        float: right;
+        display: block;
+        width: min-content;
+      }
     }
 
     @media (min-width: 992px) {
-      margin: 0 20px;
+      margin: 0 40px;
+      width : auto;
+    }
+
+    @media (min-width: 1080px) {
+      margin: 0 auto;
+      width : 1000px;
     }
 
     @media (min-width: 1200px) {
-      margin: 0 auto;
-      width : 980px;
+      margin: 0 100px;
+      width : auto;
     }
 
     @media (min-width: 1600px) {
       margin: 0 auto;
-      width : 1200px;
+      width : 1400px;
     }
   }
 }

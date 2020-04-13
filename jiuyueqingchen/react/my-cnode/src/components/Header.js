@@ -2,10 +2,13 @@ import React from 'react';
 import logo from '../static/img/cnodejs_light.svg';
 import { Layout, Menu, Row, Col } from 'antd';
 import { nav } from '../router';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
   const { Header } = Layout;
+  const { pathname } = useLocation();
+  let activeIndex = nav.findIndex(navData => pathname === navData.to);
+
   return (
     <Header style={{
       position: 'fixed',
@@ -25,6 +28,7 @@ function Header() {
             <Menu
               theme='dark'
               mode='horizontal'
+              defaultSelectedKeys={[activeIndex + '']}
               className='nav'
             >{
                 nav.map((navData, index) => {
