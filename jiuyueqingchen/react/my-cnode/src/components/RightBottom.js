@@ -5,8 +5,6 @@ import ruby_china from '../static/img/ruby-china-20150529.png';
 import client_qr_code from '../static/img/client_qr_code.jpg';
 
 function RightBottom() {
-  console.log(rightBottom);
-
   return (
     <div className={rightBottom['right-bottom']}>
       <div className={rightBottom['friendly-community']}>

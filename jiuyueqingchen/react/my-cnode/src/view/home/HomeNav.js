@@ -7,6 +7,9 @@ function HomeNav() {
   return (
     <Menu
       mode='horizontal'
+      style={{
+        'border-bottom': '1px solid #d1d1d1'
+      }}
     >{
         homeNav.map((homeNavData, index) => {
           return (

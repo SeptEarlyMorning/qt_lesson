@@ -1,8 +1,17 @@
 import React from 'react';
+import { RightTop, RightBottom } from '../../components';
 
 function AboutPage() {
   return (
-    <div>关于我们</div>
+    <>
+      <div className='left'>
+        关于
+      </div>
+      <div className='right'>
+        <RightTop />
+        <RightBottom />
+      </div>
+    </>
   );
 }
 
