@@ -1,5 +1,19 @@
 export default function topics(topics = {
-  a: 1
+  loading: true,
+  data: []
 }, action) {
-  return topics;
+  switch (action.type) {
+    case 'topics_loading':
+      return {
+        loading: true,
+        data: []
+      };
+    case 'topics_loadOver':
+      return {
+        loading: false,
+        data: action.data
+      }
+    default:
+      return topics;
+  }
 };

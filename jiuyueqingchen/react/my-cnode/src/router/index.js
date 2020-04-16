@@ -7,24 +7,13 @@ import {
   TopicPage,
   UserPage
 } from '../view';
-import qs from 'qs';
 
 const route = [{
   id: 0,
   path: '/',
   exact: true,
   render(props) {
-    const { location } = props;
-    const search = location.search.slice(1);
-    let { tab, page } = qs.parse(search);
-    tab = (tab || 'all');
-    page = (+page || page || 1);
-    console.log(tab, page, typeof page);
-
-    if (homeTabs.includes(tab)) {
-      return (<HomePage {...props} />);
-    }
-    return (<Page404 />);
+    return (<HomePage {...props} />);
   }
 }, {
   id: 1,
@@ -109,4 +98,5 @@ export {
   route,
   nav,
   homeNav,
+  homeTabs,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import './static/css/App.css';
 import { useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import { Layout, Button } from 'antd'
+import { Layout } from 'antd'
 import { route } from './router';
 import { Header, Footer } from './components';
 
@@ -30,7 +30,6 @@ function App() {
             })
           }</Switch>
         </div>
-        <Button>dd</Button>
       </Content>
       <Footer>footer</Footer>
     </Layout>
