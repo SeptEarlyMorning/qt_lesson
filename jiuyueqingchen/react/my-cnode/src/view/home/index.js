@@ -28,7 +28,7 @@ function HomePage() {
         <TopicsList
           loading={loading}
           dataSource={data}
-          tab={tab}
+          nowTab={tab}
           nowPage={page}
         />
       </div>

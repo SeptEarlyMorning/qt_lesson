@@ -1,0 +1,53 @@
+.topics-list {
+  .topics-list-topic {
+    @media screen {
+      position : relative;
+      padding  : 10px;
+      display  : flex;
+      flex-wrap: nowrap;
+
+      .title-container {
+        overflow: hidden;
+        flex    : 1;
+
+        a {
+          display      : inline-block;
+          width        : 100%;
+          overflow     : hidden;
+          text-overflow: ellipsis;
+          white-space  : nowrap;
+          padding-right: 40px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .reply-visit-container {
+          position: absolute;
+          left    : 0;
+          bottom  : 0;
+        }
+
+      }
+
+      @media (min-width: 1080px) {
+        .title-container {
+          a {
+            width: 420px;
+
+          }
+        }
+      }
+    }
+
+
+    .tag {
+      border-radius: 3px;
+    }
+
+
+  }
+
+  .topics-list-page {
+    padding: 10px;
+  }
+}
