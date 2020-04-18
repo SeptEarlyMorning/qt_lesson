@@ -12,7 +12,7 @@ export default function topics(topics = {
       return {
         loading: false,
         data: action.data
-      }
+      };
     default:
       return topics;
   }

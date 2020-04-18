@@ -6,45 +6,116 @@
       display  : flex;
       flex-wrap: nowrap;
 
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      .reply-visit-container {
+        width     : 80px;
+        text-align: center;
+        color     : #aaa;
+
+        span:first-child {
+          color: #666;
+        }
+
+        span:nth-child(2) {
+          margin: 3px;
+        }
+      }
+
+      .tag-container {
+        .tag {
+          border-radius: 3px;
+        }
+      }
+
       .title-container {
-        overflow: hidden;
-        flex    : 1;
+        overflow     : hidden;
+        flex         : 1;
+        padding-right: 40px;
+        height       : 24px;
+        font-size    : 16px;
 
         a {
+          color        : #777;
           display      : inline-block;
           width        : 100%;
           overflow     : hidden;
           text-overflow: ellipsis;
           white-space  : nowrap;
-          padding-right: 40px;
+          line-height  : 24px;
+        }
+
+        a:hover {
+          color: #111;
+        }
+      }
+
+      .time-container {
+        a:hover span {
+          color: #666;
+        }
+
+        span {
+          transition: color 1s;
+          color     : #ccc;
+          font-size : 12px;
+
+          &:first-child {
+            margin-right: 4px;
+          }
         }
       }
 
       @media (max-width: 576px) {
+        height: 60px;
+
         .reply-visit-container {
-          position: absolute;
-          left    : 0;
-          bottom  : 0;
+          position  : absolute;
+          left      : 100px;
+          bottom    : 8px;
+          font-size : 12px;
+          text-align: left;
         }
 
+        .tag-container {
+          margin-left: 10px;
+        }
+
+        .title-container {
+          position : relative;
+          bottom   : 8px;
+          font-size: 14px;
+        }
+
+        .time-container {
+          position  : relative;
+          height    : 100%;
+          text-align: center;
+
+          span:first-child {
+            width       : 100%;
+            margin-right: 0;
+          }
+
+          span:nth-child(2) {
+            position: absolute;
+            bottom  : 0;
+            right   : 0;
+            width   : max-content;
+          }
+        }
       }
 
       @media (min-width: 1080px) {
         .title-container {
           a {
-            width: 420px;
-
+            // width: 420px;
           }
         }
       }
     }
-
-
-    .tag {
-      border-radius: 3px;
-    }
-
-
   }
 
   .topics-list-page {

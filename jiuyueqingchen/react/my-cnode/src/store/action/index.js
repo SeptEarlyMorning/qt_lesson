@@ -9,7 +9,7 @@ function useTopicsList() {
       type: 'topics_loading'
     });
     http.get(`/topics?tab=${tab}&page=${page}&limit=${limit}&mdrender=${mdrender}`).then(res => {
-      console.log(res);
+      // console.log(res);
       dispath({
         type: 'topics_loadOver',
         data: res.data.data
@@ -18,6 +18,29 @@ function useTopicsList() {
   }
 }
 
+function useTopicDetails() {
+  let dispath = useDispatch();
+
+  return (id) => {
+    dispath({
+      type: 'topicDetails_loading'
+    });
+    http.get(`/topic/${id}`).then(res => {
+      console.log(res);
+      dispath({
+        type: 'topicDetails_loadOver',
+        data: res.data.data
+      })
+    }).catch(res => {
+      dispath({
+        type: 'topicDetails_loadError',
+        error_msg: res.response.data.error_msg
+      })
+    });
+  };
+}
+
 export {
   useTopicsList,
+  useTopicDetails,
 };

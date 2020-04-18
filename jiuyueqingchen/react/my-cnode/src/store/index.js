@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from 'redux';
-import topics from './reducer/topics';
+import { topics, topicDetails } from './reducer';
 
 export default createStore(combineReducers({
-  topics
+  topics,
+  topicDetails,
 }));

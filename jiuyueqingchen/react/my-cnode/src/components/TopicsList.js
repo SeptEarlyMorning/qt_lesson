@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Pagination, Row, Col, Avatar, Tag } from 'antd';
+import { List, Pagination, Avatar, Tag } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import topicsList from '../static/less/topicsList.module.less';
@@ -18,7 +18,7 @@ function TopicsList(props) {
         loading={loading}
         dataSource={dataSource}
         renderItem={item => {
-          const { author, author_id, create_at, good, id, last_reply_at, reply_count, tab, title, top, visit_count } = item;
+          const { author, author_id, good, id, last_reply_at, reply_count, tab, title, top, visit_count } = item;
           const txt = tab && homeNav[homeTabs.indexOf(tab)].txt;
 
           return (
@@ -26,7 +26,9 @@ function TopicsList(props) {
               <div
                 className={topicsList['avatar-container']}
               >
-                <Link>
+                <Link
+                  to={`/user/${author.loginname}`}
+                >
                   <Avatar
                     icon={<UserOutlined />}
                     shape='square'
@@ -50,22 +52,29 @@ function TopicsList(props) {
                     ? <Tag
                       className={topicsList['tag']}
                       visible={top || good}
-                      color='#80BD01'
+                      color='green'
                     >{`${top ? '置顶' : '精华'}`}</Tag>
-                    : txt && nowTab && nowTab === 'all' && <Tag className={topicsList['tag']}>{txt}</Tag>
+                    : txt
+                    && nowTab
+                    && nowTab === 'all'
+                    && <Tag
+                      className={topicsList['tag']}
+                    >{txt}</Tag>
                 }
               </div>
               <div
                 className={topicsList['title-container']}
               >
-                <Link>{title}</Link>
+                <Link to={`/topic/${id}`}>{title}</Link>
               </div>
               <div
                 className={topicsList['time-container']}
               >
                 {
                   reply_count > 0
-                    ? <Link>
+                    ? <Link
+                      to={`/user/${author.loginname}#${author_id}`}
+                    >
                       <span>最后回复</span>
                       <span>{moment(last_reply_at).fromNow()}</span>
                     </Link>
@@ -81,7 +90,7 @@ function TopicsList(props) {
       />
       <Pagination
         className={topicsList['topics-list-page']}
-        current={nowPage}
+        defaultCurrent={nowPage}
         hideOnSinglePage={false}
         total={1000}
         showSizeChanger={false}
