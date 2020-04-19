@@ -6,6 +6,7 @@ import topicsList from '../static/less/topicsList.module.less';
 import { homeNav, homeTabs } from '../router'
 import 'moment/locale/zh-cn';
 import moment from 'moment';
+import TopicTag from './TopicTag';
 
 moment.locale('zh-cn');
 
@@ -47,20 +48,12 @@ function TopicsList(props) {
               <div
                 className={topicsList['tag-container']}
               >
-                {
-                  top || good
-                    ? <Tag
-                      className={topicsList['tag']}
-                      visible={top || good}
-                      color='green'
-                    >{`${top ? '置顶' : '精华'}`}</Tag>
-                    : txt
-                    && nowTab
-                    && nowTab === 'all'
-                    && <Tag
-                      className={topicsList['tag']}
-                    >{txt}</Tag>
-                }
+                <TopicTag
+                  top={top}
+                  good={good}
+                  txt={txt}
+                  nowTab={nowTab}
+                />
               </div>
               <div
                 className={topicsList['title-container']}
