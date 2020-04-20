@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { RightTop, RightBottom } from '../../components';
-import TopicContent from './TopicContent';
+import TopicDetails from './TopicDetails';
 import { useTopicDetails } from '../../store/action';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import TopicComment from './TopicComment';
 
 function TopicPage() {
   let getData = useTopicDetails();
   let { id } = useParams();
+  const { loading, data, isError, error_msg } = useSelector(state => state.topicDetails);
+  const { replies } = data;
 
+  console.log(data);
   useEffect(() => {
     getData(id);
   }, [id]);
@@ -15,7 +20,14 @@ function TopicPage() {
   return (
     <>
       <div className='left'>
-        <TopicContent />
+        <TopicDetails
+          data={data}
+          loading={loading}
+        />
+        <TopicComment
+          replies={replies}
+          loading={loading}
+        />
       </div>
       <div className='right'>
         <RightTop />

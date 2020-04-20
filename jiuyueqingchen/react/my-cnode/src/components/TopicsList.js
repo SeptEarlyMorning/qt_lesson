@@ -3,12 +3,8 @@ import { List, Pagination, Avatar, Tag } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import topicsList from '../static/less/topicsList.module.less';
-import { homeNav, homeTabs } from '../router'
-import 'moment/locale/zh-cn';
-import moment from 'moment';
-import TopicTag from './TopicTag';
-
-moment.locale('zh-cn');
+import { homeNav, homeTabs } from '../router';
+import { TopicTag, FromNow } from '.';
 
 function TopicsList(props) {
   const { loading, dataSource, nowTab, nowPage } = props;
@@ -19,7 +15,7 @@ function TopicsList(props) {
         loading={loading}
         dataSource={dataSource}
         renderItem={item => {
-          const { author, author_id, good, id, last_reply_at, reply_count, tab, title, top, visit_count } = item;
+          const { author, author_id, good, id, create_at, last_reply_at, reply_count, tab, title, top, visit_count } = item;
           const txt = tab && homeNav[homeTabs.indexOf(tab)].txt;
 
           return (
@@ -63,19 +59,13 @@ function TopicsList(props) {
               <div
                 className={topicsList['time-container']}
               >
-                {
-                  reply_count > 0
-                    ? <Link
-                      to={`/user/${author.loginname}#${author_id}`}
-                    >
-                      <span>最后回复</span>
-                      <span>{moment(last_reply_at).fromNow()}</span>
-                    </Link>
-                    : <>
-                      <span>发布于</span>
-                      <span>{moment(last_reply_at).fromNow()}</span>
-                    </>
-                }
+                <FromNow
+                  author={author}
+                  author_id={author_id}
+                  reply_count={reply_count}
+                  create_at={create_at}
+                  last_reply_at={last_reply_at}
+                />
               </div>
             </List.Item>
           );
