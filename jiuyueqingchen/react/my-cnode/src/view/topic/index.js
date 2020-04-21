@@ -10,7 +10,7 @@ function TopicPage() {
   let getData = useTopicDetails();
   let { id } = useParams();
   const { loading, data, isError, error_msg } = useSelector(state => state.topicDetails);
-  const { replies } = data;
+  const { replies, reply_count } = data;
 
   console.log(data);
   useEffect(() => {
@@ -24,10 +24,14 @@ function TopicPage() {
           data={data}
           loading={loading}
         />
-        <TopicComment
-          replies={replies}
-          loading={loading}
-        />
+        {
+          reply_count && reply_count > 0 &&
+          <TopicComment
+            reply_count={reply_count}
+            replies={replies}
+            loading={loading}
+          />
+        }
       </div>
       <div className='right'>
         <RightTop />

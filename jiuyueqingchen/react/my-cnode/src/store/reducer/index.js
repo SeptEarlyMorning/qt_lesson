@@ -1,7 +1,9 @@
-import topics from './topics.js';
-import topicDetails from './topicDetails.js';
+import topics from './topics';
+import topicDetails from './topicDetails';
+import userInfo from './userInfo';
 
 export {
   topics,
   topicDetails,
+  userInfo,
 };

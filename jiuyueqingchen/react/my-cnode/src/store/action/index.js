@@ -40,7 +40,25 @@ function useTopicDetails() {
   };
 }
 
+function useUserInfo() {
+  let dispath = useDispatch();
+
+  return (loginname) => {
+    dispath({
+      type: 'userInfo_loading'
+    });
+    http.get(`/user/${loginname}`).then(res => {
+      console.log(res);
+      dispath({
+        type: 'userInfo_loadOver',
+        data: res.data.data
+      });
+    })
+  };
+}
+
 export {
   useTopicsList,
   useTopicDetails,
+  useUserInfo,
 };

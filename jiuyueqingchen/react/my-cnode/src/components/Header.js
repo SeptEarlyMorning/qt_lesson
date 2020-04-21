@@ -28,7 +28,7 @@ function Header() {
             <Menu
               theme='dark'
               mode='horizontal'
-              defaultSelectedKeys={[activeIndex + '']}
+              selectedKeys={[activeIndex + '']}
               className='nav'
             >{
                 nav.map((navData, index) => {

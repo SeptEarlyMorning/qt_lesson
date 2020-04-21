@@ -60,7 +60,7 @@ function TopicsList(props) {
                 className={topicsList['time-container']}
               >
                 <FromNow
-                  author={author}
+                  id={id}
                   author_id={author_id}
                   reply_count={reply_count}
                   create_at={create_at}
