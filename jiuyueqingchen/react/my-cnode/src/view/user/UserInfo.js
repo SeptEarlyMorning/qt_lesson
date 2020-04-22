@@ -1,23 +1,13 @@
 import React from 'react';
-import { Card } from 'antd';
 
-function UserInfo() {
-  const tabList = [{
-    key: 0,
-    tab: <p>1</p>
-  }, {
-    key: 1,
-    tab: <p>1</p>
-  }, {
-    key: 2,
-    tab: <p>1</p>
-  },]
+function UserInfo(props) {
+  let { avatar_url, create_at, githubUsername, loginname, score } = props;
   return (
-    <Card
-      tabList={tabList}
+    <div
     >
+      <h1></h1>
 
-    </Card>
+    </div>
   );
 }
 
