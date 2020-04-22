@@ -1,0 +1,35 @@
+.user-info-container {
+  background-color: #fff;
+  text-align      : center;
+  padding         : 10px;
+
+  .user-info {
+    margin-top: 10px;
+
+    &>span {
+      margin-left: 13px;
+      position   : relative;
+
+      &::after {
+        content         : '';
+        position        : absolute;
+        display         : block;
+        height          : 15px;
+        width           : 1px;
+        background-color: #aaa;
+        right           : -7px;
+        top             : 2px;
+
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+
+    p {
+      margin: 10px 0 0 0;
+    }
+  }
+
+}

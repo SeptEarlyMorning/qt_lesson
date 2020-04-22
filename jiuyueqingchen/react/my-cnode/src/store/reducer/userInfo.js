@@ -8,7 +8,7 @@ export default function userInfo(userInfo = {
         laoding: false,
         data: {},
       };
-    case 'userInfo-loadOver':
+    case 'userInfo_loadOver':
       return {
         loading: true,
         data: action.data

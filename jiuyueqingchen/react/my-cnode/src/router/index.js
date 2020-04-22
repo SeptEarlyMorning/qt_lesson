@@ -5,7 +5,8 @@ import {
   HomePage,
   Page404,
   TopicPage,
-  UserPage
+  UserPage,
+  UserCollectTopicsPage
 } from '../view';
 
 const route = [{
@@ -45,6 +46,13 @@ const route = [{
   }
 }, {
   id: 5,
+  path: '/user/:loginName/collect',
+  exact: true,
+  render(props) {
+    return <UserCollectTopicsPage {...props} />
+  }
+}, {
+  id: 6,
   path: '',
   exact: false,
   render(props) {

@@ -5,6 +5,7 @@ import RightTop from './RightTop';
 import TopicsList from './TopicsList';
 import TopicTag from './TopicTag';
 import FromNow from './FromNow';
+import UserNav from './UserNav';
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   TopicsList,
   TopicTag,
   FromNow,
+  UserNav,
 };
