@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { UserNav, RightTop, RightBottom } from '../../components';
+import { UserNav, RightTop, RightBottom, TopicsList } from '../../components';
 import UserInfo from './UserInfo';
 import { useUserInfo } from '../../store/action';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Card } from 'antd';
 
 function UserPage() {
   const { loginName } = useParams();
@@ -26,6 +27,44 @@ function UserPage() {
           loginname={loginname}
           score={score}
         />
+        <Card
+          className='card'
+          title={`最近创建的话题`}
+          size='small'
+          headStyle={{
+            padding: '5px 20px',
+            marginBottom: 0,
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#666'
+          }}
+          bodyStyle={{
+            padding: 0,
+          }}
+        >
+          <TopicsList
+            dataSource={recent_topics}
+          />
+        </Card>
+        <Card
+          className='card'
+          title={`最近参与的话题`}
+          size='small'
+          headStyle={{
+            padding: '5px 20px',
+            marginBottom: 0,
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#666'
+          }}
+          bodyStyle={{
+            padding: 0,
+          }}
+        >
+          <TopicsList
+            dataSource={recent_replies}
+          />
+        </Card>
       </div>
       <div className='right'>
         <RightTop />

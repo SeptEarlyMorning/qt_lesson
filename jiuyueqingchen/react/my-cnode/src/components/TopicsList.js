@@ -14,6 +14,16 @@ function TopicsList(props) {
       <List
         loading={loading}
         dataSource={dataSource}
+        pagination={{
+          defaultCurrent: 1,
+          hideOnSinglePage: true,
+          pageSize: 40,
+          showSizeChanger: false,
+          position: "bottom",
+          style: {
+            padding: '0 10px 10px',
+          }
+        }}
         renderItem={item => {
           const { author, author_id, good, id, create_at, last_reply_at, reply_count, tab, title, top, visit_count } = item;
           const txt = tab && homeNav[homeTabs.indexOf(tab)].txt;
@@ -34,13 +44,13 @@ function TopicsList(props) {
                   />
                 </Link>
               </div>
-              <div
+              {nowTab && <div
                 className={topicsList['reply-visit-container']}
               >
                 <span>{reply_count}</span>
                 <span>/</span>
                 <span>{visit_count}</span>
-              </div>
+              </div>}
               <div
                 className={topicsList['tag-container']}
               >
@@ -71,7 +81,7 @@ function TopicsList(props) {
           );
         }}
       />
-      <Pagination
+      {nowTab && <Pagination
         className={topicsList['topics-list-page']}
         defaultCurrent={nowPage}
         hideOnSinglePage={false}
@@ -91,7 +101,7 @@ function TopicsList(props) {
               />
           );
         }}
-      />
+      />}
     </div>
   );
 }

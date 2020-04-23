@@ -57,8 +57,26 @@ function useUserInfo() {
   };
 }
 
+function useUserCollectTopics() {
+  let dispath = useDispatch();
+
+  return (loginname) => {
+    dispath({
+      type: 'userCollectTopics_loading'
+    });
+    http.get(`/topic_collect/${loginname}`).then(res => {
+      console.log(res);
+      dispath({
+        type: 'userCollectTopics_loadOver',
+        data: res.data.data
+      });
+    })
+  };
+}
+
 export {
   useTopicsList,
   useTopicDetails,
   useUserInfo,
+  useUserCollectTopics,
 };

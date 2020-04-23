@@ -18,10 +18,15 @@ function FromNow(props) {
             <span>最后回复</span>
             <span>{moment(last_reply_at).fromNow()}</span>
           </>
-          : <>
-            <span>发布于</span>
-            <span>{moment(create_at).fromNow()}</span>
-          </>
+          : (create_at
+            ? <>
+              <span>发布于</span>
+              <span>{moment(create_at).fromNow()}</span>
+            </>
+            : <>
+              <span>最后回复</span>
+              <span>{moment(last_reply_at).fromNow()}</span>
+            </>)
       }
     </>
   );
