@@ -6,10 +6,11 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Card } from 'antd';
 
+
 function UserPage() {
+  const getData = useUserInfo();
   const { loginName } = useParams();
-  let getData = useUserInfo();
-  const { data, loading } = useSelector(state => state.userInfo);
+  const { data } = useSelector(state => state.userInfo);
   const { avatar_url, create_at, githubUsername, loginname, recent_replies, recent_topics, score } = data;
 
   useEffect(() => {

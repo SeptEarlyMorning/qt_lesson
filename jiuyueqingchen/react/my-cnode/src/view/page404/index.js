@@ -1,15 +1,17 @@
 import React from 'react';
-import { RightTop, RightBottom } from '../../components';
+import { Result, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 function Page404() {
   return (
     <>
       <div className='left'>
-        页面飞走了
-      </div>
-      <div className='right'>
-        <RightTop />
-        <RightBottom />
+        <Result
+          status="404"
+          title="404"
+          subTitle="页面找不到啦！"
+          extra={<Button type="primary"><Link to='/'>回到主页</Link></Button>}
+        />
       </div>
     </>
   );

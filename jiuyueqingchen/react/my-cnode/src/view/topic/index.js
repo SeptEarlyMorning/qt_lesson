@@ -6,13 +6,13 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import TopicComment from './TopicComment';
 
+
 function TopicPage() {
-  let getData = useTopicDetails();
+  const getData = useTopicDetails();
   let { id } = useParams();
-  const { loading, data, isError, error_msg } = useSelector(state => state.topicDetails);
+  const { loading, data } = useSelector(state => state.topicDetails);
   const { replies, reply_count } = data;
 
-  console.log(data);
   useEffect(() => {
     getData(id);
   }, [id]);

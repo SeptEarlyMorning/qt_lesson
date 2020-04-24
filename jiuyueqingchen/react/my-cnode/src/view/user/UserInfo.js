@@ -33,6 +33,7 @@ function UserInfo(props) {
             marginRight: '4px'
           }} />
           <a
+            rel='noopener noreferrer'
             target='_blank'
             href={`https://github.com/${githubUsername}`
             }>

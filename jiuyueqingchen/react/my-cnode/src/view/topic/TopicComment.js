@@ -1,10 +1,9 @@
 import React, { createElement } from 'react';
-import { Comment, Card, List, Avatar, Tooltip, Anchor } from 'antd';
+import { Comment, Card, List, Avatar, Tooltip } from 'antd';
 import { UserOutlined, LikeOutlined, LikeFilled } from '@ant-design/icons';
 import FromNow from '../../components/FromNow';
 import { Link } from 'react-router-dom';
 import topicComment from '../../static/less/topicComment.module.less';
-// import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 
 const scrollToAnchor = (anchorName) => {
   if (anchorName) {
@@ -35,11 +34,15 @@ function TopicComment(props) {
     >
       <List
         dataSource={replies}
-        renderItem={(comment, idnex) => {
+        renderItem={(comment, index) => {
           const { author, content, id, create_at, is_uped, ups } = comment;
           const { avatar_url, loginname } = author;
+          // const [likes, useLikes] = useState(ups.length);
+          // let likes = ups.length,
+          //   isLike = is_uped;
           const like = () => {
-
+            // useLikes(likes + 1)
+            // isLike = true;
           };
 
           const actions = [
@@ -58,7 +61,7 @@ function TopicComment(props) {
             <li
               className={topicComment['item']}
             >
-              <a id={id} className={topicComment['anchor']} />
+              <p id={id} className={topicComment['anchor']} />
               <Comment
                 actions={actions}
                 author={
@@ -81,11 +84,12 @@ function TopicComment(props) {
                   </div>
                 }
                 datetime={
-                  <a
+                  <p
+                    className={topicComment['anchor-link']}
                     onClick={() => {
                       scrollToAnchor(id);
                     }}
-                  >{idnex + 1} 楼 • <FromNow create_at={create_at} /></a>
+                  >{index + 1} 楼 • <FromNow create_at={create_at} /></p>
                 }
               >
               </Comment>

@@ -4,9 +4,10 @@ import { useParams } from 'react-router-dom';
 import { useUserCollectTopics } from '../../store/action';
 import { useSelector } from 'react-redux';
 
+
 function UserCollectTopicsPage() {
-  const { loginName } = useParams();
   const getData = useUserCollectTopics();
+  const { loginName } = useParams();
   const { data } = useSelector(state => state.userCollectTopics);
 
   useEffect(() => {

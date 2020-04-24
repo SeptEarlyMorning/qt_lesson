@@ -6,7 +6,8 @@ import {
   Page404,
   TopicPage,
   UserPage,
-  UserCollectTopicsPage
+  UserCollectTopicsPage,
+  ApiPage
 } from '../view';
 
 const route = [{
@@ -25,34 +26,41 @@ const route = [{
   }
 }, {
   id: 2,
+  path: '/api',
+  exact: true,
+  render(props) {
+    return <ApiPage {...props} />
+  }
+}, {
+  id: 3,
   path: '/about',
   exact: true,
   render(props) {
     return <AboutPage {...props} />
   }
 }, {
-  id: 3,
+  id: 4,
   path: '/topic/:id',
   exact: true,
   render(props) {
     return <TopicPage {...props} />
   }
 }, {
-  id: 4,
+  id: 5,
   path: '/user/:loginName',
   exact: true,
   render(props) {
     return <UserPage {...props} />
   }
 }, {
-  id: 5,
+  id: 6,
   path: '/user/:loginName/collect',
   exact: true,
   render(props) {
     return <UserCollectTopicsPage {...props} />
   }
 }, {
-  id: 6,
+  id: 7,
   path: '',
   exact: false,
   render(props) {

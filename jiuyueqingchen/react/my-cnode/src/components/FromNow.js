@@ -1,7 +1,6 @@
 import React from 'react';
 import 'moment/locale/zh-cn';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 moment.locale('zh-cn');

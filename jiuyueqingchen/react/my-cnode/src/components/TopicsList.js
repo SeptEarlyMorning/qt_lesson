@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Pagination, Avatar, Tag } from 'antd';
+import { List, Pagination, Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import topicsList from '../static/less/topicsList.module.less';

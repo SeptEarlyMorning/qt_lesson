@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import userNav from '../static/less/userNav.module.less';
 
 function UserNav(props) {
-  console.log(props);
   const { isCollect } = props;
   const { loginName } = useParams();
 

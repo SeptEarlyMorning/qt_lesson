@@ -12,7 +12,7 @@ moment.locale('zh-cn');
 
 function TopicDetails(props) {
   const { data, loading } = props;
-  const { author, author_id, content, create_at, good, id, is_collect, last_reply_at, replies, replu_count, tab, title, top, visit_count } = data;
+  const { author, create_at, good, tab, title, top, visit_count } = data;
   const txt = tab && homeNav[homeTabs.indexOf(tab)].txt;
   return (
     <Card

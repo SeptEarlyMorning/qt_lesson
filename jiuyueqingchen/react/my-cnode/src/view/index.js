@@ -5,6 +5,7 @@ import Page404 from './page404';
 import TopicPage from './topic';
 import UserPage from './user';
 import UserCollectTopicsPage from './userCollectTopics';
+import ApiPage from './api';
 
 export {
   AboutPage,
@@ -14,4 +15,5 @@ export {
   TopicPage,
   UserPage,
   UserCollectTopicsPage,
+  ApiPage,
 };
