@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 function UserCollectTopicsPage() {
   const getData = useUserCollectTopics();
   const { loginName } = useParams();
-  const { data } = useSelector(state => state.userCollectTopics);
+  const { loading, data } = useSelector(state => state.userCollectTopics);
 
   useEffect(() => {
     getData(loginName);
@@ -22,6 +22,7 @@ function UserCollectTopicsPage() {
         />
         <TopicsList
           dataSource={data}
+          loading={loading}
         />
       </div>
       <div className='right'>

@@ -31,10 +31,10 @@ function useTopicDetails() {
         type: 'topicDetails_loadOver',
         data: res.data.data
       })
-    }).catch(res => {
+    }).catch(err => {
       dispath({
         type: 'topicDetails_loadError',
-        error_msg: res.response.data.error_msg
+        error_msg: err.response.data.error_msg
       })
     });
   };
@@ -53,7 +53,12 @@ function useUserInfo() {
         type: 'userInfo_loadOver',
         data: res.data.data
       });
-    })
+    }).catch(err => {
+      dispath({
+        type: 'userInfo_loadError',
+        error_msg: err.response.data.error_msg
+      });
+    });
   };
 }
 
