@@ -14,7 +14,7 @@ function TopicPage() {
   const { replies, reply_count } = data;
 
   useEffect(() => {
-    getData(id);
+    getData(id); // eslint-disable-next-line
   }, [id]);
 
   return (

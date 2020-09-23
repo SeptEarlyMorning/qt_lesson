@@ -14,7 +14,7 @@ function UserPage() {
   const { avatar_url, create_at, githubUsername, loginname, recent_replies, recent_topics, score } = data;
 
   useEffect(() => {
-    getData(loginName);
+    getData(loginName); // eslint-disable-next-line
   }, [loginName]);
 
   return (

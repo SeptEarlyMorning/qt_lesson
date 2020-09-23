@@ -1,13 +1,10 @@
 import React from 'react';
-import './static/css/App.css';
-import { useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { Layout, BackTop } from 'antd'
 import { route } from './router';
 import { Header, Footer } from './components';
 
 function App() {
-  console.log(useSelector(state => state.topics));
   const { Content } = Layout;
 
   return (

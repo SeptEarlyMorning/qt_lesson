@@ -132,7 +132,7 @@ function ApiPage() {
         <div
           style={{
             backgroundColor: '#fff',
-            padding: '10px'
+            padding: '10px 25px'
           }}
           dangerouslySetInnerHTML={{
             __html: html

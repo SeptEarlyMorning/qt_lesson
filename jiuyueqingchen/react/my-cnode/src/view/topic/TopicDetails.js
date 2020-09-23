@@ -12,8 +12,9 @@ moment.locale('zh-cn');
 
 function TopicDetails(props) {
   const { data, loading } = props;
-  const { author, create_at, good, tab, title, top, visit_count } = data;
+  const { author, create_at, good, tab, title, top, visit_count, content } = data;
   const txt = tab && homeNav[homeTabs.indexOf(tab)].txt;
+
   return (
     <Card
       className={topicDetails['topic-details']}
@@ -39,7 +40,7 @@ function TopicDetails(props) {
       loading={loading}
     >
       <div dangerouslySetInnerHTML={{
-        __html: data.content
+        __html: content
       }} />
     </Card>
   );

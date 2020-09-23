@@ -9,7 +9,6 @@ function useTopicsList() {
       type: 'topics_loading'
     });
     http.get(`/topics?tab=${tab}&page=${page}&limit=${limit}&mdrender=${mdrender}`).then(res => {
-      // console.log(res);
       dispath({
         type: 'topics_loadOver',
         data: res.data.data
@@ -26,7 +25,6 @@ function useTopicDetails() {
       type: 'topicDetails_loading'
     });
     http.get(`/topic/${id}`).then(res => {
-      console.log(res);
       dispath({
         type: 'topicDetails_loadOver',
         data: res.data.data
@@ -48,7 +46,6 @@ function useUserInfo() {
       type: 'userInfo_loading'
     });
     http.get(`/user/${loginname}`).then(res => {
-      console.log(res);
       dispath({
         type: 'userInfo_loadOver',
         data: res.data.data
@@ -70,7 +67,6 @@ function useUserCollectTopics() {
       type: 'userCollectTopics_loading'
     });
     http.get(`/topic_collect/${loginname}`).then(res => {
-      console.log(res);
       dispath({
         type: 'userCollectTopics_loadOver',
         data: res.data.data

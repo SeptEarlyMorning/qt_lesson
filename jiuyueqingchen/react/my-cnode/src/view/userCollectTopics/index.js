@@ -11,7 +11,7 @@ function UserCollectTopicsPage() {
   const { loading, data } = useSelector(state => state.userCollectTopics);
 
   useEffect(() => {
-    getData(loginName);
+    getData(loginName); // eslint-disable-next-line
   }, [loginName]);
 
   return (

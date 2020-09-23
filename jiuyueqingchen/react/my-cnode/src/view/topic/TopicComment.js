@@ -16,7 +16,6 @@ const scrollToAnchor = (anchorName) => {
 
 function TopicComment(props) {
   const { reply_count, replies, loading } = props;
-  console.log(replies);
 
   return (
     <Card
